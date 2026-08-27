@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inesse Cecilio Alouhmy — Marketing Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --pink:#FDEAEF;
+  --pink-mid:#f5c9d8;
+  --fuchsia:#E8458B;
+  --black:#1a1a1a;
+  --paper:#faf8f4;
+}
+
+html{scroll-behavior:smooth;}
+body{background:var(--pink);font-family:'Montserrat',sans-serif;color:var(--black);overflow-x:hidden;cursor:none;}
+
+/* TYPO GLOBALE — hiérarchie Montserrat */
+h1,h2,h3,.section-title,.cat-title,.svc-name,.proj-title,.proc-title{font-family:'Montserrat',sans-serif;}
+.body-text,.proj-desc,.cat-desc,.proc-desc{font-family:'Courier Prime',monospace;}
+.script-font{font-family:'Dancing Script',cursive;}
+
+.cur{width:10px;height:10px;background:var(--fuchsia);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .08s;}
+.cur-r{width:30px;height:30px;border:1.5px solid var(--fuchsia);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .05s linear;opacity:.5;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,234,239,.95);backdrop-filter:blur(10px);border-bottom:1.5px solid var(--pink-mid);}
+.nav-inner{display:flex;align-items:center;height:52px;padding:0 2rem;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:var(--black);text-decoration:none;margin-right:auto;white-space:nowrap;}
+.nav-logo b{font-family:'Montserrat',sans-serif;font-weight:900;font-style:normal;color:var(--fuchsia);font-size:.85rem;letter-spacing:.08em;}
+.nav-tabs{display:flex;height:100%;overflow-x:auto;}
+.nav-tab{display:flex;align-items:center;padding:0 1rem;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;text-decoration:none;border-bottom:3px solid transparent;transition:all .18s;white-space:nowrap;cursor:none;}
+.nav-tab:hover,.nav-tab.on{color:var(--fuchsia);border-bottom-color:var(--fuchsia);}
+.lang-switch{display:flex;align-items:center;margin-left:1rem;flex-shrink:0;}
+.lang-btn{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;color:#aaa;background:none;border:1.5px solid var(--pink-mid);padding:.3rem .6rem;cursor:none;transition:all .18s;}
+.lang-btn.on{color:#fff;background:var(--fuchsia);border-color:var(--fuchsia);}
+.lang-btn:first-child{border-right:none;}
+html[lang-mode="en"] .fr{display:none !important;}
+html:not([lang-mode="en"]) .en{display:none !important;}
+
+.page{display:none;min-height:100vh;padding-top:52px;animation:fadeIn .3s ease;}
+.page.on{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* HERO */
+.hero{position:relative;height:calc(100vh - 52px);overflow:hidden;}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(253,234,239,.45) 0%,rgba(253,234,239,.05) 100%);}
+.hero-btn-wrap{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);}
+.hero-btn{display:inline-flex;align-items:center;gap:.7rem;background:var(--fuchsia);color:#fff;padding:.85rem 2.2rem;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:none;cursor:none;transition:all .2s;box-shadow:0 4px 20px rgba(232,69,139,.35);}
+.hero-btn:hover{background:var(--black);box-shadow:4px 4px 0 var(--fuchsia);}
+
+/* ABOUT */
+.about{background:var(--paper);}
+.about img{width:100%;display:block;}
+.about-en{background:linear-gradient(135deg,var(--pink) 0%,#f7dbe4 100%);padding:3.5rem 3rem;}
+.about-en-inner{display:flex;align-items:center;gap:3rem;max-width:1100px;margin:0 auto;background:#fff;border:1.5px solid var(--pink-mid);box-shadow:6px 6px 0 var(--pink-mid);padding:2.5rem;}
+.about-en-photo-wrap{flex-shrink:0;width:220px;text-align:center;}
+.about-en-photo{width:220px;height:260px;background:#000 url('img1.jpg') center/cover no-repeat;border:8px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.25);margin-bottom:1.2rem;}
+.about-en-name{font-family:'Dancing Script',cursive;font-weight:700;font-size:1.7rem;color:var(--fuchsia);line-height:1.3;}
+.about-en-title{font-family:'Dancing Script',cursive;font-weight:700;font-size:2.2rem;color:var(--fuchsia);margin-bottom:1.2rem;}
+.about-en-text p{font-family:'Courier Prime',monospace;font-size:.85rem;line-height:1.75;color:var(--black);margin-bottom:1rem;}
+@media(max-width:800px){.about-en-inner{flex-direction:column;}}
+
+/* SECTION UTILS */
+.section-eye{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--fuchsia);margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:600;}
+.section-eye::before{content:'';display:inline-block;width:18px;height:1.5px;background:var(--fuchsia);flex-shrink:0;}
+.section-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;line-height:.95;color:var(--black);letter-spacing:-.02em;}
+.section-title .pk{color:var(--fuchsia);}
+
+/* SKILLS */
+.skills-section{padding:3.5rem 3rem;background:var(--pink);}
+.skills-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.8rem;margin-top:2rem;}
+.sk{background:#fff;border:1.5px solid var(--pink-mid);padding:1rem 1.4rem;display:flex;align-items:center;gap:.9rem;transition:all .22s;overflow:hidden;position:relative;cursor:default;}
+.sk::after{content:'';position:absolute;inset:0;background:var(--fuchsia);transform:translateX(-101%);transition:transform .22s;z-index:0;}
+.sk:hover::after{transform:translateX(0);}
+.sk{background:#fff;border:1.5px solid var(--pink-mid);padding:1rem 1.4rem;display:flex;align-items:center;gap:.9rem;transition:all .22s;overflow:hidden;position:relative;cursor:default;}
+.sk::after{content:'';position:absolute;inset:0;background:var(--fuchsia);transform:translateX(-101%);transition:transform .22s;z-index:0;}
+.sk:hover::after{transform:translateX(0);}
+.sk-logo{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;}
+.sk-logo svg{width:100%;height:100%;}
+.sk-logo img{width:100%;height:100%;object-fit:contain;}
+.sk-name{font-size:.72rem;letter-spacing:.04em;font-weight:700;transition:color .22s;position:relative;z-index:1;font-family:'Montserrat',sans-serif;color:var(--black);white-space:nowrap;}
+.sk:hover .sk-name{color:#fff;}
+.sk:hover .sk-logo svg path,.sk:hover .sk-logo svg rect,.sk:hover .sk-logo svg circle,.sk:hover .sk-logo svg polygon,.sk:hover .sk-logo svg ellipse{fill:#fff !important;}
+.sk:hover .sk-logo svg text{fill:#fff !important;}
+
+/* SERVICES */
+.services-section{background:var(--pink);padding:4rem 3rem;border-top:1.5px solid var(--pink-mid);}
+.svc-list{display:flex;flex-direction:column;gap:.7rem;margin-top:2rem;}
+.svc-row{display:flex;align-items:center;gap:1.5rem;padding:1.1rem 1.4rem;border:1.5px solid var(--pink-mid);background:#fff;transition:all .18s;cursor:none;}
+.svc-row:hover{border-color:var(--fuchsia);background:var(--pink);transform:translateX(5px);box-shadow:4px 4px 0 var(--pink-mid);}
+.svc-n{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.6rem;color:var(--pink-mid);min-width:2.5rem;transition:color .18s;letter-spacing:-.02em;}
+.svc-row:hover .svc-n{color:var(--fuchsia);}
+.svc-info{flex:1;}
+.svc-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.25rem;color:var(--black);letter-spacing:-.01em;}
+.svc-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.35rem;}
+.svc-tag{font-size:.72rem;letter-spacing:.04em;color:#bbb;border:1px solid var(--pink-mid);padding:.25rem .75rem;font-family:'Montserrat',sans-serif;font-weight:500;border-radius:50px;}
+.svc-arr{color:var(--pink-mid);font-size:1rem;transition:all .18s;font-weight:700;}
+.svc-row:hover .svc-arr{color:var(--fuchsia);transform:translateX(4px);}
+
+/* PROCESSUS */
+.process-section{background:var(--paper);padding:4.5rem 3rem;position:relative;overflow:hidden;}
+.process-nb{position:absolute;inset:0;background-image:repeating-linear-gradient(transparent,transparent 27px,#e8dde4 27px,#e8dde4 28.5px);background-size:100% 28.5px;background-position:0 52px;opacity:.25;pointer-events:none;}
+.process-inner{position:relative;z-index:1;}
+.process-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:3rem;gap:2rem;}
+.process-header-left{flex:1;}
+
+/* DOSSIER SVG AMÉLIORÉ */
+.folder-wrap{width:140px;flex-shrink:0;margin-top:-.5rem;}
+
+.proc-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;color:var(--pink-mid);line-height:1;min-width:2.5rem;}
+.proc-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;color:var(--black);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;}
+.proc-desc{font-size:.8rem;line-height:1.7;color:#999;font-family:'Courier Prime',monospace;}
+
+/* CONTACT — refonte premium */
+.contact-section{padding:5rem 3rem;background:var(--pink);}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.contact-left .section-eye{margin-bottom:1.2rem;}
+.contact-heading{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;line-height:.95;color:var(--black);letter-spacing:-.02em;margin-bottom:.5rem;}
+.contact-heading span{color:var(--fuchsia);}
+.contact-sub{font-size:.82rem;color:#aaa;font-family:'Montserrat',sans-serif;font-weight:400;margin-bottom:2rem;letter-spacing:.01em;}
+.contact-info{display:flex;flex-direction:column;gap:1rem;}
+.c-line{display:flex;align-items:center;gap:.9rem;font-size:.8rem;font-family:'Montserrat',sans-serif;font-weight:500;}
+.c-line-icon{width:36px;height:36px;background:#fff;border:1.5px solid var(--pink-mid);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.c-line a{color:var(--black);text-decoration:none;transition:color .18s;font-weight:500;}
+.c-line a:hover{color:var(--fuchsia);}
+.contact-divider{width:40px;height:2px;background:var(--fuchsia);margin:2rem 0;}
+
+/* FORMULAIRE premium */
+.c-form{display:flex;flex-direction:column;gap:1.2rem;}
+.c-field{display:flex;flex-direction:column;gap:.4rem;}
+.c-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#bbb;font-family:'Montserrat',sans-serif;font-weight:700;}
+.c-input,.c-textarea{width:100%;background:#fff;border:none;border-bottom:1.5px solid var(--pink-mid);padding:.7rem 0;font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:500;color:var(--black);outline:none;transition:border-color .18s;resize:none;}
+.c-input:focus,.c-textarea:focus{border-bottom-color:var(--fuchsia);}
+.c-input::placeholder,.c-textarea::placeholder{color:#ccc;font-weight:400;}
+.c-textarea{height:90px;}
+.c-btn{background:var(--fuchsia);color:#fff;border:none;padding:1rem 2rem;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;cursor:none;transition:all .2s;margin-top:.4rem;align-self:flex-start;}
+.c-btn:hover{background:var(--black);box-shadow:4px 4px 0 var(--fuchsia);}
+
+/* PAGES CAT */
+.cat-intro{padding:3.5rem 3rem;background:var(--pink);display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.cat-num-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--fuchsia);margin-bottom:.8rem;font-family:'Montserrat',sans-serif;font-weight:600;}
+.cat-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(2.5rem,6.5vw,4.8rem);line-height:.9;color:var(--black);margin-bottom:1.2rem;letter-spacing:-.03em;}
+.cat-title .pk{color:var(--fuchsia);}
+.cat-desc{font-size:.87rem;line-height:1.85;color:#666;font-family:'Courier Prime',monospace;}
+.cat-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem;}
+.cat-tag{border:1.5px solid var(--fuchsia);color:var(--fuchsia);padding:.28rem .8rem;font-size:.62rem;letter-spacing:.1em;font-weight:700;font-family:'Montserrat',sans-serif;border-radius:50px;}
+.cat-visual img{width:100%;border:1.5px solid var(--pink-mid);box-shadow:6px 6px 0 var(--pink-mid);}
+.projects-section{padding:3rem 3rem 4rem;background:var(--paper);position:relative;} .projects-section::before{content:'';display:block;position:absolute;top:-50px;left:0;right:0;height:50px;background:linear-gradient(to bottom,var(--pink),var(--paper));pointer-events:none;z-index:1;}
+.projects-nb{position:absolute;inset:0;background-image:repeating-linear-gradient(transparent,transparent 27px,#e8dde4 27px,#e8dde4 28.5px);background-size:100% 28.5px;background-position:0 52px;opacity:.2;pointer-events:none;}
+.projects-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2.5rem;}
+.proj-card{background:#fff;border:1.5px solid var(--pink-mid);transition:all .22s;overflow:hidden;}
+.proj-card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--pink-mid);border-color:var(--fuchsia);}
+.proj-head{background:var(--pink);padding:.8rem 1.1rem;border-bottom:1.5px solid var(--pink-mid);display:flex;justify-content:space-between;align-items:center;}
+.proj-num{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia);font-weight:700;font-family:'Montserrat',sans-serif;}
+.proj-img{width:100%;display:block;border-bottom:1.5px solid var(--pink-mid);}
+.proj-body{padding:1.2rem;}
+.proj-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--black);margin-bottom:.5rem;letter-spacing:-.01em;}
+.proj-desc{font-size:.77rem;line-height:1.7;color:#888;font-family:'Courier Prime',monospace;}
+
+footer{background:var(--black);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;}
+.ft-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:#fff;}
+.ft-name b{font-family:'Montserrat',sans-serif;font-weight:900;font-style:normal;color:var(--fuchsia);font-size:.8rem;letter-spacing:.06em;}
+.ft-sub{font-size:.62rem;color:#666;letter-spacing:.08em;font-family:'Montserrat',sans-serif;font-weight:500;}
+
+@media(max-width:900px){
+  .process-steps{flex-direction:column;gap:0;}
+  .proc-step:not(:last-child){border-right:1.5px solid var(--pink-mid);border-bottom:none;}
+  .proc-step:not(:last-child)::after{content:'';border:none;bottom:-16px;top:auto;right:auto;left:50%;transform:translateX(-50%);border-left:12px solid transparent;border-right:12px solid transparent;border-top:16px solid var(--fuchsia);}
+  .cat-intro,.contact-inner{grid-template-columns:1fr;}
+  .contact-inner{gap:3rem;}
+}
+@media(max-width:600px){
+  nav,.services-section,.process-section,.contact-section,.skills-section,.projects-section,.cat-intro{padding-left:1.2rem;padding-right:1.2rem;}
+  .hero-btn{font-size:.65rem;padding:.75rem 1.5rem;}
+  .folder-wrap{display:none;}
+}
+
+/* ==================== MOBILE ==================== */
+@media(hover:none) and (pointer:coarse){
+  body,.nav-tab,.svc-row,.hero-btn,.proj-card,.cat-tag,.svc-tag,a{cursor:auto!important;}
+  .cur,.cur-r{display:none!important;}
+}
+@media(max-width:900px){
+  .page{animation:none!important;}
+  .nav-inner{padding:0 1rem;}
+  .nav-logo{font-size:1.1rem;margin-right:.8rem;}
+  .nav-tab{padding:0 .7rem;font-size:.62rem;}
+  .lang-switch{margin-left:.4rem;}
+  .lang-btn{padding:.25rem .5rem;font-size:.6rem;}
+
+  .hero{height:auto;min-height:0;background:var(--pink);padding:1.5rem 0 2rem;display:flex;flex-direction:column;align-items:center;position:relative;}
+  .hero-img{position:relative;width:100%;height:auto;object-fit:contain;object-position:center;}
+  .hero-overlay{display:none;}
+  .hero-btn-wrap{position:relative;left:auto;bottom:auto;transform:none;margin-top:1.5rem;width:calc(100% - 2.4rem);max-width:320px;text-align:center;}
+  .about-en-inner{padding:1.5rem;gap:1.5rem;}
+  .about-en-photo-wrap{width:160px;}
+  .about-en-photo{width:160px;height:190px;}
+  .about-en-title{font-size:1.6rem;}
+  .about-en-text p{font-size:.78rem;}
+
+  .services-section,.process-section,.contact-section,.skills-section,.projects-section{padding:3rem 1.2rem!important;}
+  .section-title{font-size:1.6rem!important;}
+
+  .svc-row{flex-wrap:wrap;gap:.8rem;padding:1rem;}
+  .svc-name{font-size:1.05rem;}
+
+  .proc-grid{grid-template-columns:1fr!important;gap:2rem!important;}
+  .proc-arrow{display:none;}
+
+  .cat-intro{display:block!important;padding:2.5rem 1.2rem!important;text-align:left;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;}
+  .cat-intro>div{display:block!important;height:auto!important;overflow:visible!important;}
+  .cat-title{font-size:1.8rem!important;}
+
+  .proj-grid{grid-template-columns:1fr!important;width:100%!important;}
+  .projects-inner{width:100%!important;max-width:100%!important;}
+  .proj-card{width:100%!important;max-width:100%!important;}
+  .design-grid{grid-template-columns:1fr!important;}
+
+  .camp-grid{flex-direction:column!important;}
+  .camp-grid>div{width:100%!important;}
+
+  .contact-inner{grid-template-columns:1fr!important;gap:2.5rem!important;}
+  .contact-heading{font-size:1.6rem!important;}
+
+  footer{flex-direction:column;gap:.8rem;text-align:center;padding:1.5rem 1.2rem!important;}
+}
+.nav-burger{display:none;background:none;border:none;font-size:1.4rem;color:var(--black);cursor:pointer;padding:.4rem .6rem;margin-left:.5rem;z-index:101;position:relative;}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:98;}
+.nav-overlay.open{display:block;}
+.nav-close{display:none;}
+@media(max-width:700px){
+  .nav-logo{font-size:1.3rem;white-space:nowrap;max-width:none;}
+  .nav-logo span.full-name{display:none;}
+  .nav-burger{display:block;order:2;margin-left:auto;}
+  .nav-tabs{
+    display:flex;position:fixed;top:0;right:0;bottom:0;
+    width:78%;max-width:300px;
+    background:#fff;flex-direction:column;overflow-x:visible;overflow-y:auto;
+    padding:5.5rem 2rem 2rem;height:100vh;z-index:150;
+    transform:translateX(100%);transition:transform .25s ease;
+    box-shadow:-4px 0 24px rgba(0,0,0,.15);
+  }
+  .nav-tabs.open{transform:translateX(0);}
+  .nav-tab{height:auto;padding:1rem 0;font-size:1rem;color:var(--black)!important;border-bottom:1px solid #eee!important;justify-content:flex-start;letter-spacing:.05em;}
+  .nav-tab.on{color:var(--fuchsia)!important;}
+  .nav-close{display:block;position:absolute;top:1.3rem;right:1.3rem;font-size:1.8rem;line-height:1;color:var(--black);background:none;border:none;cursor:pointer;z-index:151;}
+  .lang-switch{order:1;margin-left:0;margin-right:.3rem;}
+}
+@media(max-width:480px){
+  .nav-tab{font-size:.95rem;}
+  .hero-title,.section-title,.cat-title{word-break:break-word;}
+  .about-en-inner{flex-direction:column;text-align:center;}
+  .about-en-photo-wrap{margin:0 auto;}
+}
+
+/* LIGHTBOX */
+.lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9000;align-items:center;justify-content:center;}
+.lb-overlay.open{display:flex;}
+.lb-close{position:absolute;top:1.5rem;right:2rem;color:#fff;font-size:2rem;cursor:pointer;z-index:9001;font-family:'Montserrat',sans-serif;font-weight:300;line-height:1;}
+.lb-close:hover{color:var(--fuchsia);}
+.lb-content{max-width:90vw;max-height:90vh;position:relative;}
+.lb-content img{max-width:90vw;max-height:88vh;object-fit:contain;display:block;border-radius:2px;}
+.lb-caption{color:#ccc;font-size:.75rem;text-align:center;margin-top:.8rem;font-family:'Montserrat',sans-serif;}
+
+/* MAGAZINE VIEWER */
+.mag-viewer{background:#111;width:90vw;max-width:700px;position:relative;}
+.mag-viewer img{width:100%;display:block;max-height:88vh;object-fit:contain;}
+.mag-nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1.2rem;background:#1a1a1a;}
+.mag-nav button{background:none;border:1.5px solid #444;color:#fff;padding:.4rem 1.2rem;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .18s;}
+.mag-nav button:hover{border-color:var(--fuchsia);color:var(--fuchsia);}
+.mag-nav button:disabled{opacity:.3;cursor:not-allowed;}
+.mag-page-count{color:#888;font-size:.72rem;font-family:'Montserrat',sans-serif;}
+
+/* PROJ CARD CLIQUABLE */
+.proj-card.clickable{cursor:pointer;}
+.proj-card.clickable:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--fuchsia);border-color:var(--fuchsia);}
+
+</style>
+</head>
+<body>
+
+<div class="cur" id="c"></div>
+<div class="cur-r" id="cr"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" onclick="go('home');return false;"><b>ICA</b>&nbsp;<span class="full-name">Inesse Cecilio Alouhmy</span></a>
+    <button class="nav-burger" id="navBurger" onclick="toggleNavMenu()" aria-label="Menu">☰</button>
+    <div class="nav-tabs" id="navTabs">
+      <button class="nav-close" onclick="toggleNavMenu()" aria-label="Fermer">×</button>
+      <a class="nav-tab on fr" data-p="home" href="#" onclick="go('home');return false;">Accueil</a>
+      <a class="nav-tab on en" data-p="home" href="#" onclick="go('home');return false;">Home</a>
+      <a class="nav-tab fr" data-p="branding" href="#" onclick="go('branding');return false;">Branding</a>
+      <a class="nav-tab en" data-p="branding" href="#" onclick="go('branding');return false;">Branding</a>
+      <a class="nav-tab fr" data-p="redaction" href="#" onclick="go('redaction');return false;">Rédaction</a>
+      <a class="nav-tab en" data-p="redaction" href="#" onclick="go('redaction');return false;">Copywriting</a>
+      <a class="nav-tab fr" data-p="mailing" href="#" onclick="go('mailing');return false;">Mailing</a>
+      <a class="nav-tab en" data-p="mailing" href="#" onclick="go('mailing');return false;">Mailing</a>
+      <a class="nav-tab fr" data-p="design" href="#" onclick="go('design');return false;">Design</a>
+      <a class="nav-tab en" data-p="design" href="#" onclick="go('design');return false;">Design</a>
+      <a class="nav-tab fr" data-p="campagnes" href="#" onclick="go('campagnes');return false;">Campagnes</a>
+      <a class="nav-tab en" data-p="campagnes" href="#" onclick="go('campagnes');return false;">Campaigns</a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn fr-btn on" onclick="setLang('fr')">FR</button><button class="lang-btn en-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+<div class="nav-overlay" id="navOverlay" onclick="toggleNavMenu()"></div>
+
+<!-- ======= ACCUEIL ======= -->
+<div id="pg-home" class="page on">
+
+  <section class="hero">
+    <img class="hero-img" src="img2.jpg" alt="Portfolio Inesse Cecilio Alouhmy">
+    <div class="hero-overlay"></div>
+    <div class="hero-btn-wrap">
+      <a class="hero-btn fr" href="#" onclick="document.getElementById('about-s').scrollIntoView({behavior:'smooth'});return false;">Découvrir mon travail →</a>
+      <a class="hero-btn en" href="#" onclick="document.getElementById('about-s').scrollIntoView({behavior:'smooth'});return false;">Discover my work →</a>
+    </div>
+  </section>
+
+  <section class="about" id="about-s">
+    <img src="img3.jpg" alt="À propos d'Inesse Cecilio Alouhmy" class="fr">
+    <div class="en about-en">
+      <div class="about-en-inner">
+        <div class="about-en-photo-wrap">
+          <div class="about-en-photo"></div>
+          <div class="about-en-name">Inesse<br>Cecilio<br>Alouhmy</div>
+        </div>
+        <div class="about-en-text">
+          <div class="about-en-title">about me</div>
+          <p>I'm Inesse. What I love most about my work is telling visual stories that truly resonate with people.</p>
+          <p>I built my expertise in advertising (JCDecaux), tech (Invent App), and events, learning to handle words, visuals, and strategy with as much rigor as passion.</p>
+          <p>What drives me? Taking a raw project and giving it a real identity — something that's seen, that's felt, that lasts.</p>
+          <p>I'm someone who observes, who listens, and who always seeks to understand what's behind a brand before writing a single word or creating a single image.</p>
+          <p>To me, marketing is above all a human question.</p>
+          <p>I'm convinced that good marketing doesn't settle for being visible. It creates connection, tells a story, drives action.</p>
+          <p>And because good ideas deserve to travel, I work in French, English, Portuguese, and Spanish. 🌍</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section">
+    <div class="section-eye fr">Mes outils</div>
+    <div class="section-eye en">My Tools</div>
+    <div style="position:relative;overflow:hidden;background:var(--pink);">
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom, var(--pink) 0%, transparent 8%, transparent 92%, var(--pink) 100%), linear-gradient(to right, var(--pink) 0%, transparent 5%, transparent 95%, var(--pink) 100%);z-index:1;pointer-events:none;"></div>
+      <img src="img4.jpg" alt="Skills & Certifications" style="width:100%;display:block;mix-blend-mode:multiply;">
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="section-eye fr">Ce que je propose</div>
+    <div class="section-eye en">What I Offer</div>
+    <h2 class="section-title fr">Ce que je <span class="pk">vous propose</span></h2>
+    <h2 class="section-title en">What I Can <span class="pk">Offer You</span></h2>
+    <div class="svc-list fr">
+      <div class="svc-row" onclick="go('branding')"><div class="svc-n">01</div><div class="svc-info"><div class="svc-name">Branding & Identité visuelle</div><div class="svc-tags"><span class="svc-tag">Brand Strategy</span><span class="svc-tag">Charte graphique</span><span class="svc-tag">Maquettes</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('redaction')"><div class="svc-n">02</div><div class="svc-info"><div class="svc-name">Rédaction & Copywriting</div><div class="svc-tags"><span class="svc-tag">Articles SEO</span><span class="svc-tag">Copywriting</span><span class="svc-tag">Docs commerciaux</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('mailing')"><div class="svc-n">03</div><div class="svc-info"><div class="svc-name">Mailing & Newsletters</div><div class="svc-tags"><span class="svc-tag">Email B2B</span><span class="svc-tag">Newsletter</span><span class="svc-tag">Email Marketing</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('design')"><div class="svc-n">04</div><div class="svc-info"><div class="svc-name">Design & Création visuelle</div><div class="svc-tags"><span class="svc-tag">Magazines</span><span class="svc-tag">Bannières</span><span class="svc-tag">Papeterie</span><span class="svc-tag">Miniatures</span><span class="svc-tag">Portfolio</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('campagnes')"><div class="svc-n">05</div><div class="svc-info"><div class="svc-name">Gestion de campagnes</div><div class="svc-tags"><span class="svc-tag">Meta Ads</span><span class="svc-tag">Google Ads</span><span class="svc-tag">Email Marketing</span><span class="svc-tag">Suivi & Optimisation</span></div></div><div class="svc-arr">→</div></div>
+    </div>
+    <div class="svc-list en">
+      <div class="svc-row" onclick="go('branding')"><div class="svc-n">01</div><div class="svc-info"><div class="svc-name">Branding & Visual Identity</div><div class="svc-tags"><span class="svc-tag">Brand Strategy</span><span class="svc-tag">Brand Guidelines</span><span class="svc-tag">Mockups</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('redaction')"><div class="svc-n">02</div><div class="svc-info"><div class="svc-name">Copywriting & Content Writing</div><div class="svc-tags"><span class="svc-tag">SEO Articles</span><span class="svc-tag">Copywriting</span><span class="svc-tag">Business Documents</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('mailing')"><div class="svc-n">03</div><div class="svc-info"><div class="svc-name">Mailing & Newsletters</div><div class="svc-tags"><span class="svc-tag">B2B Email</span><span class="svc-tag">Newsletter</span><span class="svc-tag">Email Marketing</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('design')"><div class="svc-n">04</div><div class="svc-info"><div class="svc-name">Design & Visual Creation</div><div class="svc-tags"><span class="svc-tag">Magazines</span><span class="svc-tag">Banners</span><span class="svc-tag">Stationery</span><span class="svc-tag">Thumbnails</span><span class="svc-tag">Portfolio</span></div></div><div class="svc-arr">→</div></div>
+      <div class="svc-row" onclick="go('campagnes')"><div class="svc-n">05</div><div class="svc-info"><div class="svc-name">Campaign Management</div><div class="svc-tags"><span class="svc-tag">Meta Ads</span><span class="svc-tag">Google Ads</span><span class="svc-tag">Email Marketing</span><span class="svc-tag">Tracking & Optimization</span></div></div><div class="svc-arr">→</div></div>
+    </div>
+  </section>
+
+  <!-- PROCESSUS -->
+  <section class="process-section">
+    <div class="process-nb"></div>
+    <div class="process-inner">
+
+      <div style="margin-bottom:3rem;">
+        <div class="section-eye fr">Comment je travaille</div>
+        <div class="section-eye en">How I Work</div>
+        <h2 class="section-title fr">Mon <span class="pk">processus</span></h2>
+        <h2 class="section-title en">My <span class="pk">Process</span></h2>
+      </div>
+
+      <div class="fr proc-grid" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:start;gap:0;">
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">01</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Découverte & Briefing</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Rencontre initiale</strong>Une première discussion pour comprendre vos besoins, vos objectifs, et l'essence de votre projet.</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Recherche & inspiration</strong>Analyse du marché, étude de la concurrence, et élaboration d'un moodboard pour définir l'orientation visuelle.</li>
+          </ul>
+        </div>
+
+        <div class="proc-arrow" style="font-size:1.6rem;color:var(--fuchsia);padding:.4rem 1.5rem 0;align-self:start;">→</div>
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">02</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Stratégie & Conception</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Définition de l'approche</strong>Ligne éditoriale, direction visuelle ou plan de campagne selon le service.</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Révisions collaboratives</strong>Recueil de vos retours et ajustements jusqu'à ce que le concept final soit aligné avec votre vision.</li>
+          </ul>
+        </div>
+
+        <div class="proc-arrow" style="font-size:1.6rem;color:var(--fuchsia);padding:.4rem 1.5rem 0;align-self:start;">→</div>
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">03</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Production & Révisions</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Création des livrables</strong>Contenus, visuels, emails, campagnes — selon ce qui a été défini ensemble.</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Validation finale</strong>Présentation de la version finalisée pour approbation avant la livraison.</li>
+          </ul>
+        </div>
+
+        <div class="proc-arrow" style="font-size:1.6rem;color:var(--fuchsia);padding:.4rem 1.5rem 0;align-self:start;">→</div>
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">04</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Livraison & Suivi</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Remise des fichiers</strong>Formats adaptés à chaque support (print, digital, web).</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Support post-projet</strong>Assistance pour toute question ou ajustement mineur après la livraison.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="en proc-grid" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:start;gap:0;">
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">01</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Discovery & Briefing</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Initial meeting</strong>A first conversation to understand your needs, your goals, and the essence of your project.</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Research & inspiration</strong>Market analysis, competitor review, and a moodboard to define the visual direction.</li>
+          </ul>
+        </div>
+
+        <div class="proc-arrow" style="font-size:1.6rem;color:var(--fuchsia);padding:.4rem 1.5rem 0;align-self:start;">→</div>
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">02</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Strategy & Design</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Defining the approach</strong>Editorial line, visual direction, or campaign plan depending on the service.</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Collaborative revisions</strong>Gathering your feedback and refining until the final concept matches your vision.</li>
+          </ul>
+        </div>
+
+        <div class="proc-arrow" style="font-size:1.6rem;color:var(--fuchsia);padding:.4rem 1.5rem 0;align-self:start;">→</div>
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">03</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Production & Revisions</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Creating deliverables</strong>Content, visuals, emails, campaigns — based on what was defined together.</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Final validation</strong>Presenting the finalized version for approval before delivery.</li>
+          </ul>
+        </div>
+
+        <div class="proc-arrow" style="font-size:1.6rem;color:var(--fuchsia);padding:.4rem 1.5rem 0;align-self:start;">→</div>
+
+        <div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--pink-mid);line-height:1;margin-bottom:.6rem;">04</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem;">Delivery & Follow-up</div>
+          <ul style="font-family:'Courier Prime',monospace;font-size:.75rem;line-height:1.7;color:#aaa;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Delivering files</strong>Formats suited to each medium (print, digital, web).</li>
+            <li style="padding-left:.8rem;border-left:2px solid var(--pink-mid);"><strong style="color:#888;font-size:.7rem;display:block;">Post-project support</strong>Assistance with any question or minor adjustment after delivery.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact-s">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="section-eye fr">Me contacter</div>
+        <div class="section-eye en">Get In Touch</div>
+        <h2 class="contact-heading fr">Prêt(e) à transformer votre vision <span>en réalité ?</span></h2>
+        <h2 class="contact-heading en">Ready to turn your vision <span>into reality?</span></h2>
+        <p class="contact-sub fr">Prenez rendez-vous et remplissez ce formulaire afin que je puisse obtenir un maximum d'informations.</p>
+        <p class="contact-sub en">Book a call and fill out this form so I can gather as much information as possible.</p>
+        <div class="contact-divider"></div>
+        <div class="contact-info fr">
+          <div class="c-line"><div class="c-line-icon">📅</div><a href="https://calendly.com/ica-strategy/30min" target="_blank" style="font-weight:700;color:#E8458B;">Prendre rendez-vous</a></div>
+          <div class="c-line"><div class="c-line-icon">📞</div><a href="tel:+33781791786">+33 7 81 79 17 86</a></div>
+          <div class="c-line"><div class="c-line-icon">✉️</div><a href="mailto:ica.strategy@gmail.com">ica.strategy@gmail.com</a></div>
+          <div class="c-line"></div>
+        </div>
+        <div class="contact-info en">
+          <div class="c-line"><div class="c-line-icon">📅</div><a href="https://calendly.com/ica-strategy/30min" target="_blank" style="font-weight:700;color:#E8458B;">Book a call</a></div>
+          <div class="c-line"><div class="c-line-icon">📞</div><a href="tel:+33781791786">+33 7 81 79 17 86</a></div>
+          <div class="c-line"><div class="c-line-icon">✉️</div><a href="mailto:ica.strategy@gmail.com">ica.strategy@gmail.com</a></div>
+          <div class="c-line"></div>
+        </div>
+      </div>
+      <div style="width:100%;">
+        <iframe src="https://tally.so/embed/dWRaQV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+          loading="lazy" 
+          width="100%" 
+          height="500" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0" 
+          title="Formulaire de contact">
+        </iframe>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======= BRANDING ======= -->
+<div id="pg-branding" class="page cat-page">
+  <section class="cat-intro">
+    <div class="fr">
+      <div class="cat-num-label">Service 01</div>
+      <h1 class="cat-title"><span class="pk">Branding</span> &amp;<br>Identité visuelle</h1>
+      <p class="cat-desc">Créer une marque, ce n'est pas choisir des couleurs. C'est définir ce que les gens ressentent quand ils vous croisent. Du positionnement stratégique à la charte graphique, jusqu'aux maquettes, je construis des identités cohérentes, mémorables et taillées pour durer.</p>
+      <div class="cat-tags"><span class="cat-tag">Brand Strategy</span><span class="cat-tag">Charte graphique</span><span class="cat-tag">Maquettes</span></div>
+    </div>
+    <div class="en">
+      <div class="cat-num-label">Service 01</div>
+      <h1 class="cat-title"><span class="pk">Branding</span> &amp;<br>Visual Identity</h1>
+      <p class="cat-desc">Creating a brand isn't about picking colors. It's about defining what people feel when they come across you. From strategic positioning to brand guidelines and mockups, I build identities that are coherent, memorable, and built to last.</p>
+      <div class="cat-tags"><span class="cat-tag">Brand Strategy</span><span class="cat-tag">Brand Guidelines</span><span class="cat-tag">Mockups</span></div>
+    </div>
+  </section>
+  <section class="projects-section">
+    <div class="projects-nb"></div>
+    <div class="projects-inner">
+      <div class="section-eye fr">Réalisations</div>
+      <div class="section-eye en">Portfolio</div>
+      <h2 class="section-title fr">Mes <span class="pk">projets</span></h2>
+      <h2 class="section-title en">My <span class="pk">Projects</span></h2>
+      <div class="proj-grid">
+
+        <div class="proj-card clickable" onclick="openLb2(&#39;img5.jpg&#39;,&#39;Charte Graphique — Aksel Beauty Paris&#39;,&#39;Brand Guidelines — Aksel Beauty Paris&#39;)">
+          <div class="proj-head"><span class="proj-num fr">Projet n°1 — Cliquer pour agrandir</span><span class="proj-num en">Project #1 — Click to enlarge</span><span>📁</span></div>
+          <img class="proj-img" src="img5.jpg" alt="Aksel Beauty Paris" style="height:200px;object-fit:cover;">
+          <div class="proj-body">
+            <div class="proj-title fr">Charte Graphique — Aksel Beauty Paris</div>
+            <div class="proj-title en">Brand Guidelines — Aksel Beauty Paris</div>
+            <div class="proj-desc fr">Une charte graphique définit l'ADN visuel d'une marque : palette de couleurs, typographies, logo et règles d'utilisation. C'est le document de référence qui garantit la cohérence sur tous vos supports, du packaging au site web.</div>
+            <div class="proj-desc en">A brand style guide defines a brand's visual DNA: color palette, typography, logo, and usage rules. It's the reference document that ensures consistency across every touchpoint, from packaging to website.</div>
+          </div>
+        </div>
+
+        <div class="proj-card clickable" onclick="openLb2(&#39;img6.png&#39;,&#39;Charte Graphique — Leyah Coffee Shop&#39;,&#39;Brand Guidelines — Leyah Coffee Shop&#39;)">
+          <div class="proj-head"><span class="proj-num fr">Projet n°2 — Cliquer pour agrandir</span><span class="proj-num en">Project #2 — Click to enlarge</span><span>📁</span></div>
+          <img class="proj-img" src="img6.png" alt="Leyah Coffee Shop" style="height:200px;object-fit:cover;object-position:top;">
+          <div class="proj-body">
+            <div class="proj-title fr">Charte Graphique — Leyah Coffee Shop</div>
+            <div class="proj-title en">Brand Guidelines — Leyah Coffee Shop</div>
+            <div class="proj-desc fr">Identité visuelle complète pour un coffee shop parisien : logo, palette végétale, typographies expressives et déclinaisons sur tous les supports (menu, papeterie, réseaux sociaux, newsletter).</div>
+            <div class="proj-desc en">Full visual identity for a Parisian coffee shop: logo, botanical palette, expressive typography, and adaptations across every touchpoint (menu, stationery, social media, newsletter).</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ======= RÉDACTION ======= -->
+<div id="pg-redaction" class="page cat-page">
+  <section class="cat-intro">
+    <div class="fr">
+      <div class="cat-num-label">Service 02</div>
+      <h1 class="cat-title"><span class="pk">Rédaction</span> &amp;<br>Copywriting</h1>
+      <p class="cat-desc">Des mots qui ne remplissent pas l'espace : ils convainquent, fidélisent et vendent. Je rédige des contenus qui parlent vraiment à votre audience — des articles SEO qui vous positionnent, du copywriting qui accroche dès la première ligne, et des documents commerciaux qui donnent envie de travailler avec vous.</p>
+      <div class="cat-tags"><span class="cat-tag">Articles SEO</span><span class="cat-tag">Copywriting</span><span class="cat-tag">Docs commerciaux</span></div>
+    </div>
+    <div class="en">
+      <div class="cat-num-label">Service 02</div>
+      <h1 class="cat-title"><span class="pk">Copywriting</span> &amp;<br>Content Writing</h1>
+      <p class="cat-desc">Words that don't just fill space: they convince, build loyalty, and sell. I write content that truly speaks to your audience — SEO articles that position you, copywriting that hooks from the first line, and business documents that make people want to work with you.</p>
+      <div class="cat-tags"><span class="cat-tag">SEO Articles</span><span class="cat-tag">Copywriting</span><span class="cat-tag">Business Documents</span></div>
+    </div>
+  </section>
+  <section class="projects-section">
+    <div class="projects-nb"></div>
+    <div class="projects-inner">
+      <div class="section-eye fr">Réalisations</div>
+      <div class="section-eye en">Portfolio</div>
+      <h2 class="section-title fr">Mes <span class="pk">projets</span></h2>
+      <h2 class="section-title en">My <span class="pk">Projects</span></h2>
+      <div class="proj-grid">
+
+        <div class="proj-card">
+          <div class="proj-head"><span class="proj-num fr">Projet n°3 — Articles SEO</span><span class="proj-num en">Project #3 — SEO Articles</span><span>✍️</span></div>
+          <div class="proj-body" style="padding:1.5rem 1.2rem;">
+            <div class="proj-title fr">Rédaction SEO — invent-app.com</div>
+            <div class="proj-title en">SEO Copywriting — invent-app.com</div>
+            <div class="proj-desc fr" style="margin-bottom:1rem;">Un article SEO est conçu pour être trouvé sur Google et lu jusqu'au bout. Il combine recherche de mots-clés, structure claire et contenu à haute valeur ajoutée pour attirer et convertir une audience qualifiée.</div>
+            <div class="proj-desc en" style="margin-bottom:1rem;">An SEO article is designed to be found on Google and read to the end. It combines keyword research, a clear structure, and high-value content to attract and convert a qualified audience.</div>
+            <div style="display:flex;flex-direction:column;gap:.8rem;">
+
+              <div style="background:#FDEAEF;border:1.5px solid #f5c9d8;padding:1rem 1.2rem;">
+                <div class="fr" style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E8458B;margin-bottom:.4rem;">01 — Article SEO</div>
+                <div class="en" style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E8458B;margin-bottom:.4rem;">01 — SEO Article</div>
+                <div class="fr" style="font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;color:#1a1a1a;margin-bottom:.4rem;line-height:1.3;">Les API indispensables pour améliorer votre application mobile</div>
+                <div class="en" style="font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;color:#1a1a1a;margin-bottom:.4rem;line-height:1.3;">Must-Have APIs to Improve Your Mobile App</div>
+                <div class="fr" style="font-family:'Courier Prime',monospace;font-size:.72rem;color:#999;line-height:1.6;margin-bottom:.5rem;">Intégrer des fonctionnalités avancées rapidement, sans tout développer de zéro. Découvrez comment les principales API du marché peuvent transformer votre app.</div>
+                <div class="en" style="font-family:'Courier Prime',monospace;font-size:.72rem;color:#999;line-height:1.6;margin-bottom:.5rem;">Integrate advanced features fast, without building everything from scratch. See how the market's leading APIs can transform your app.</div>
+                <a href="https://invent-app.com/les-api-indispensables-pour-ameliorer-votre-application-mobile/" target="_blank" class="fr" style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:#E8458B;text-decoration:none;letter-spacing:.06em;">Lire l'article →</a>
+                <a href="https://invent-app.com/les-api-indispensables-pour-ameliorer-votre-application-mobile/" target="_blank" class="en" style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:#E8458B;text-decoration:none;letter-spacing:.06em;">Read the article →</a>
+              </div>
+
+              <div style="background:#FDEAEF;border:1.5px solid #f5c9d8;padding:1rem 1.2rem;">
+                <div class="fr" style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E8458B;margin-bottom:.4rem;">02 — Article SEO</div>
+                <div class="en" style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E8458B;margin-bottom:.4rem;">02 — SEO Article</div>
+                <div class="fr" style="font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;color:#1a1a1a;margin-bottom:.4rem;line-height:1.3;">Flutter vs React Native : quel framework choisir en 2025 ?</div>
+                <div class="en" style="font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;color:#1a1a1a;margin-bottom:.4rem;line-height:1.3;">Flutter vs React Native: Which Framework to Choose in 2025?</div>
+                <div class="fr" style="font-family:'Courier Prime',monospace;font-size:.72rem;color:#999;line-height:1.6;margin-bottom:.5rem;">Comparatif stratégique des deux frameworks dominants du développement mobile. Performance, UX, coût, portabilité — tout ce qu'il faut savoir.</div>
+                <div class="en" style="font-family:'Courier Prime',monospace;font-size:.72rem;color:#999;line-height:1.6;margin-bottom:.5rem;">A strategic comparison of the two dominant mobile development frameworks. Performance, UX, cost, portability — everything you need to know.</div>
+                <a href="https://invent-app.com/flutter-vs-react-native-quel-framework-choisir-en-2025/" target="_blank" class="fr" style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:#E8458B;text-decoration:none;letter-spacing:.06em;">Lire l'article →</a>
+                <a href="https://invent-app.com/flutter-vs-react-native-quel-framework-choisir-en-2025/" target="_blank" class="en" style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:#E8458B;text-decoration:none;letter-spacing:.06em;">Read the article →</a>
+              </div>
+
+              <div style="background:#FDEAEF;border:1.5px solid #f5c9d8;padding:1rem 1.2rem;">
+                <div class="fr" style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E8458B;margin-bottom:.4rem;">03 — Article SEO</div>
+                <div class="en" style="font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E8458B;margin-bottom:.4rem;">03 — SEO Article</div>
+                <div class="fr" style="font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;color:#1a1a1a;margin-bottom:.4rem;line-height:1.3;">Comment optimiser une application pour améliorer la rétention utilisateur ?</div>
+                <div class="en" style="font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;color:#1a1a1a;margin-bottom:.4rem;line-height:1.3;">How to Optimize an App to Improve User Retention?</div>
+                <div class="fr" style="font-family:'Courier Prime',monospace;font-size:.72rem;color:#999;line-height:1.6;margin-bottom:.5rem;">La rétention utilisateur est un indicateur clé de la réussite d'une application mobile. Découvrez les leviers concrets pour garder vos utilisateurs actifs.</div>
+                <div class="en" style="font-family:'Courier Prime',monospace;font-size:.72rem;color:#999;line-height:1.6;margin-bottom:.5rem;">User retention is a key indicator of a mobile app's success. Discover concrete levers to keep your users active.</div>
+                <a href="https://invent-app.com/comment-optimiser-une-application-pour-ameliorer-la-retention-utilisateur/" target="_blank" class="fr" style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:#E8458B;text-decoration:none;letter-spacing:.06em;">Lire l'article →</a>
+                <a href="https://invent-app.com/comment-optimiser-une-application-pour-ameliorer-la-retention-utilisateur/" target="_blank" class="en" style="font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:#E8458B;text-decoration:none;letter-spacing:.06em;">Read the article →</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card" onclick="openLb2(&#39;img7.png&#39;,&#39;Documents Commerciaux — Transformation visuelle&#39;,&#39;Business Documents — Visual Transformation&#39;)" style="cursor:pointer;">
+          <div class="proj-head"><span class="proj-num fr">Projet n°4</span><span class="proj-num en">Project #4</span><span>📁</span></div>
+          <img class="proj-img" src="img7.png" alt="Documents Commerciaux" style="height:220px;object-fit:cover;object-position:top;">
+          <div class="proj-body">
+            <div class="proj-title fr">Documents Commerciaux</div>
+            <div class="proj-title en">Business Documents</div>
+            <div class="proj-desc fr">Un document commercial repensé visuellement : même contenu, identité visuelle entièrement revue pour plus de clarté, d'impact et de cohérence. Structure claire, hiérarchie typographique, mise en page impactante.</div>
+            <div class="proj-desc en">A business document visually redesigned: same content, entirely reworked visual identity for more clarity, impact, and consistency. Clear structure, typographic hierarchy, impactful layout.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ======= MAILING ======= -->
+<div id="pg-mailing" class="page cat-page">
+  <section class="cat-intro">
+    <div class="fr">
+      <div class="cat-num-label">Service 03</div>
+      <h1 class="cat-title"><span class="pk">Mailing</span> &amp;<br>Newsletters</h1>
+      <p class="cat-desc">De la séquence email B2B à la newsletter mensuelle éditoriale, chaque mot est pensé pour engager, fidéliser et convertir au bon moment. Structure, ton, design : tout est calibré pour votre audience.</p>
+      <div class="cat-tags"><span class="cat-tag">Email B2B</span><span class="cat-tag">Newsletter</span><span class="cat-tag">Email Marketing</span></div>
+    </div>
+    <div class="en">
+      <div class="cat-num-label">Service 03</div>
+      <h1 class="cat-title"><span class="pk">Mailing</span> &amp;<br>Newsletters</h1>
+      <p class="cat-desc">From B2B email sequences to monthly editorial newsletters, every word is crafted to engage, build loyalty, and convert at the right moment. Structure, tone, design: everything is calibrated for your audience.</p>
+      <div class="cat-tags"><span class="cat-tag">B2B Email</span><span class="cat-tag">Newsletter</span><span class="cat-tag">Email Marketing</span></div>
+    </div>
+  </section>
+  <section class="projects-section">
+    <div class="projects-nb"></div>
+    <div class="projects-inner">
+      <div class="section-eye fr">Réalisations</div>
+      <div class="section-eye en">Portfolio</div>
+      <h2 class="section-title fr">Mes <span class="pk">projets</span></h2>
+      <h2 class="section-title en">My <span class="pk">Projects</span></h2>
+      <div class="proj-grid">
+
+        <div class="proj-card clickable" onclick="openLb2(&#39;img8.jpg&#39;,&#39;Email B2B — Invent App&#39;,&#39;B2B Email — Invent App&#39;)">
+          <div class="proj-head"><span class="proj-num fr">Projet n°5 — Cliquer pour agrandir</span><span class="proj-num en">Project #5 — Click to enlarge</span><span>📁</span></div>
+          <img class="proj-img" src="img8.jpg" alt="Email Invent App" style="height:200px;object-fit:cover;object-position:top;">
+          <div class="proj-body">
+            <div class="proj-title fr">Email B2B — Invent App</div>
+            <div class="proj-title en">B2B Email — Invent App</div>
+            <div class="proj-desc fr">Un email B2B efficace ne vend pas : il crée de la confiance. Il parle le langage du décideur, apporte une valeur concrète dès la première ligne et donne une raison claire de répondre. Objet accrocheur, structure courte, CTA unique.</div>
+            <div class="proj-desc en">An effective B2B email doesn't sell: it builds trust. It speaks the decision-maker's language, delivers concrete value from the first line, and gives a clear reason to reply. Catchy subject line, short structure, single CTA.</div>
+          </div>
+        </div>
+
+        <div class="proj-card clickable" onclick="openLb2(&#39;img9.jpg&#39;,&#39;Newsletter — La Table de Leyah&#39;,&#39;Newsletter — La Table de Leyah&#39;)">
+          <div class="proj-head"><span class="proj-num fr">Projet n°6 — Cliquer pour agrandir</span><span class="proj-num en">Project #6 — Click to enlarge</span><span>📁</span></div>
+          <img class="proj-img" src="img9.jpg" alt="Newsletter Leyah" style="height:200px;object-fit:cover;object-position:top;">
+          <div class="proj-body">
+            <div class="proj-title">Newsletter — La Table de Leyah</div>
+            <div class="proj-desc fr">Une newsletter éditoriale, c'est un rendez-vous régulier avec votre communauté. Elle fidélise, humanise votre marque et génère du trafic organique. Chaque édition a une ligne claire : actualités, ton de marque, visuels cohérents et appel à l'action naturel.</div>
+            <div class="proj-desc en">An editorial newsletter is a regular touchpoint with your community. It builds loyalty, humanizes your brand, and drives organic traffic. Each issue follows a clear line: news, brand tone, consistent visuals, and a natural call to action.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======= DESIGN ======= -->
+<div id="pg-design" class="page cat-page">
+  <section class="cat-intro">
+    <div class="fr">
+      <div class="cat-num-label">Service 04</div>
+      <h1 class="cat-title"><span class="pk">Design</span> &amp;<br>Création visuelle</h1>
+      <p class="cat-desc">Un bon design ne se remarque pas — il rend tout évident. Des magazines éditoriaux qui impressionnent, des bannières qui accrochent, des portfolios qui convainquent et des miniatures qui donnent envie de cliquer.</p>
+      <div class="cat-tags"><span class="cat-tag">Magazines</span><span class="cat-tag">Bannières</span><span class="cat-tag">Portfolio</span><span class="cat-tag">Papeterie</span></div>
+    </div>
+    <div class="en">
+      <div class="cat-num-label">Service 04</div>
+      <h1 class="cat-title"><span class="pk">Design</span> &amp;<br>Visual Creation</h1>
+      <p class="cat-desc">Good design doesn't get noticed — it makes everything obvious. Editorial magazines that impress, banners that hook, portfolios that convince, and thumbnails that make people want to click.</p>
+      <div class="cat-tags"><span class="cat-tag">Magazines</span><span class="cat-tag">Banners</span><span class="cat-tag">Portfolio</span><span class="cat-tag">Stationery</span></div>
+    </div>
+  </section>
+    <section class="projects-section">
+    <div class="projects-nb"></div>
+    <div class="projects-inner">
+      <div class="section-eye fr">Réalisations</div>
+      <div class="section-eye en">Portfolio</div>
+      <h2 class="section-title fr">Mes <span class="pk">projets</span></h2>
+      <h2 class="section-title en">My <span class="pk">Projects</span></h2>
+
+      <div class="design-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;">
+
+        <div class="proj-card clickable" onclick="openMag()" style="cursor:pointer;">
+          <div class="proj-head"><span class="proj-num fr">Projet n°7 — 📖 Feuilleter le magazine</span><span class="proj-num en">Project #7 — 📖 Browse the magazine</span><span>📖</span></div>
+          <img class="proj-img" src="img10.jpg" alt="AKSEL Magazine" style="height:220px;object-fit:cover;object-position:top;">
+          <div class="proj-body">
+            <div class="proj-title fr">Magazine AKSEL — "Les Racines d'Or"</div>
+            <div class="proj-title en">AKSEL Magazine — "The Golden Roots"</div>
+            <div class="proj-desc fr">Un magazine éditorial conçu de A à Z : direction artistique, rédaction des articles, mise en page et cohérence visuelle. Chaque numéro est pensé comme un objet éditorial à part entière.</div>
+            <div class="proj-desc en">An editorial magazine designed from A to Z: art direction, article writing, layout, and visual consistency. Each issue is conceived as an editorial object in its own right.</div>
+          </div>
+        </div>
+
+        <div class="proj-card clickable" onclick="window.open('https://axelugc.my.canva.site','_blank')" style="cursor:pointer;">
+          <div class="proj-head"><span class="proj-num fr">Projet n°10</span><span class="proj-num en">Project #10</span><span>🌐</span></div>
+          <img class="proj-img" src="img11.jpg" alt="Portfolio UGC" style="height:220px;object-fit:cover;object-position:top;">
+          <div class="proj-body">
+            <div class="proj-title fr">Création de portfolio — Axel Ouhadda</div>
+            <div class="proj-title en">Portfolio Creation — Axel Ouhadda</div>
+            <div class="proj-desc fr">Un portfolio web pensé pour convertir : structure claire, identité visuelle forte, contenu optimisé pour capter l'attention et générer des prises de contact. Du design à la mise en ligne.</div>
+            <div class="proj-desc en">A web portfolio designed to convert: clear structure, strong visual identity, content optimized to capture attention and generate contact requests. From design to launch.</div>
+          </div>
+        </div>
+
+        <div class="proj-card clickable" onclick="openLb2(&#39;img12.png&#39;,&#39;Bannières — LinkedIn & autres supports&#39;,&#39;Banners — LinkedIn & other formats&#39;)" style="cursor:pointer;">
+          <div class="proj-head"><span class="proj-num fr">Projet n°8</span><span class="proj-num en">Project #8</span><span>📁</span></div>
+          <img class="proj-img" src="img12.png" alt="Bannières" style="height:220px;object-fit:cover;object-position:center;">
+          <div class="proj-body">
+            <div class="proj-title fr">Bannières — LinkedIn &amp; autres supports</div>
+            <div class="proj-title en">Banners — LinkedIn &amp; other formats</div>
+            <div class="proj-desc fr">Une bannière efficace accroche en moins de 3 secondes. Chaque bannière est pensée pour refléter l'univers de votre marque, transmettre votre message clé et inciter au clic.</div>
+            <div class="proj-desc en">An effective banner hooks attention in under 3 seconds. Each banner is designed to reflect your brand's world, convey your key message, and drive clicks.</div>
+          </div>
+        </div>
+
+        <div class="proj-card clickable" onclick="openLb2(&#39;img13.png&#39;,&#39;Papeterie — Leyah Coffee Shop&#39;,&#39;Stationery — Leyah Coffee Shop&#39;)" style="cursor:pointer;">
+          <div class="proj-head"><span class="proj-num fr">Projet n°9</span><span class="proj-num en">Project #9</span><span>📁</span></div>
+          <img class="proj-img" src="img13.png" alt="Papeterie" style="height:220px;object-fit:cover;object-position:center;">
+          <div class="proj-body">
+            <div class="proj-title fr">Papeterie — Leyah Coffee Shop</div>
+            <div class="proj-title en">Stationery — Leyah Coffee Shop</div>
+            <div class="proj-desc fr">La papeterie print est souvent le premier contact physique entre une marque et son client. Carte de visite, menu, flyer ou carte de fidélité : chaque support renforce l'identité visuelle.</div>
+            <div class="proj-desc en">Print stationery is often the first physical touchpoint between a brand and its customer. Business card, menu, flyer, or loyalty card: each piece reinforces the visual identity.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<!-- ======= CAMPAGNES ======= -->
+<div id="pg-campagnes" class="page cat-page">
+  <section class="cat-intro">
+    <div class="fr">
+      <div class="cat-num-label">Service 05</div>
+      <h1 class="cat-title"><span class="pk">Gestion de</span><br>campagnes</h1>
+      <p class="cat-desc">Créer du contenu c'est bien. Le faire voir par les bonnes personnes, au bon moment, c'est encore mieux. Je pilote vos campagnes digitales de A à Z, de la stratégie jusqu'aux résultats, pour que chaque action marketing serve vraiment vos objectifs.</p>
+      <div class="cat-tags"><span class="cat-tag">Meta Ads</span><span class="cat-tag">Google Ads</span><span class="cat-tag">Email Marketing</span><span class="cat-tag">Suivi & Optimisation</span></div>
+    </div>
+    <div class="en">
+      <div class="cat-num-label">Service 05</div>
+      <h1 class="cat-title"><span class="pk">Campaign</span><br>Management</h1>
+      <p class="cat-desc">Creating content is good. Getting it seen by the right people, at the right time, is even better. I manage your digital campaigns from A to Z, from strategy to results, so that every marketing action truly serves your goals.</p>
+      <div class="cat-tags"><span class="cat-tag">Meta Ads</span><span class="cat-tag">Google Ads</span><span class="cat-tag">Email Marketing</span><span class="cat-tag">Tracking & Optimization</span></div>
+    </div>
+  </section>
+    <section class="projects-section">
+    <div class="projects-nb"></div>
+    <div class="projects-inner">
+      <div class="section-eye fr">Ce que je gère</div>
+      <div class="section-eye en">What I Manage</div>
+      <h2 class="section-title fr">Mes <span class="pk">expertises</span></h2>
+      <h2 class="section-title en">My <span class="pk">Expertise</span></h2>
+
+      <div class="fr camp-grid" style="display:flex;gap:1.5rem;margin-top:2.5rem;align-items:stretch;">
+
+        <!-- Meta & Google Ads -->
+        <div style="flex:1;background:#fff;border:1.5px solid var(--pink-mid);padding:1.5rem;display:flex;flex-direction:column;">
+          <div style="background:var(--pink);margin:-1.5rem -1.5rem 1.2rem;padding:.8rem 1.1rem;border-bottom:1.5px solid var(--pink-mid);display:flex;justify-content:space-between;">
+            <span style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia);font-weight:700;font-family:'Montserrat',sans-serif;">Meta &amp; Google Ads</span>
+            <span>📊</span>
+          </div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--black);margin-bottom:.6rem;">Publicité digitale</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:.77rem;line-height:1.75;color:#888;flex:1;">La pub digitale, c'est bien plus que booster une publication. C'est cibler les bonnes personnes, au bon moment, avec le bon message ; pour transformer chaque euro investi en résultat concret.
+            <ul style="margin-top:.6rem;padding-left:1rem;line-height:1.8;">
+              <li><strong style="color:#666;">Meta Ads</strong> — Création et gestion de vos campagnes sur Facebook et Instagram, du ciblage jusqu'à l'optimisation.</li>
+              <li><strong style="color:#666;">Google Ads</strong> — Mise en place de campagnes Search et Display pour capter votre audience au moment où elle cherche activement.</li>
+              <li><strong style="color:#666;">Suivi & optimisation</strong> — Analyse des performances, ajustements continus et reporting clair pour maximiser votre retour sur investissement.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Email Marketing -->
+        <div style="flex:1;background:#fff;border:1.5px solid var(--pink-mid);padding:1.5rem;display:flex;flex-direction:column;">
+          <div style="background:var(--pink);margin:-1.5rem -1.5rem 1.2rem;padding:.8rem 1.1rem;border-bottom:1.5px solid var(--pink-mid);display:flex;justify-content:space-between;">
+            <span style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia);font-weight:700;font-family:'Montserrat',sans-serif;">Email Marketing</span>
+            <span>✉️</span>
+          </div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--black);margin-bottom:.6rem;">Campagnes email</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:.77rem;line-height:1.75;color:#888;flex:1;">Un bon email, ça ne finit pas dans les spams ; il donne envie d'ouvrir, de lire et de passer à l'action. Je conçois des campagnes email pensées pour engager votre audience et générer des résultats concrets.
+            <ul style="margin-top:.6rem;padding-left:1rem;line-height:1.8;">
+              <li><strong style="color:#666;">Séquences d'emails</strong> — Création de flows automatisés pour accueillir, fidéliser ou convertir vos contacts.</li>
+              <li><strong style="color:#666;">Copywriting email</strong> — Des textes percutants, dans votre ton, pour que chaque email soit lu jusqu'au bout.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Suivi & Optimisation -->
+        <div style="flex:1;background:#fff;border:1.5px solid var(--pink-mid);padding:1.5rem;display:flex;flex-direction:column;">
+          <div style="background:var(--pink);margin:-1.5rem -1.5rem 1.2rem;padding:.8rem 1.1rem;border-bottom:1.5px solid var(--pink-mid);display:flex;justify-content:space-between;">
+            <span style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia);font-weight:700;font-family:'Montserrat',sans-serif;">Suivi &amp; Optimisation</span>
+            <span>📈</span>
+          </div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--black);margin-bottom:.6rem;">Analyse &amp; amélioration continue</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:.77rem;line-height:1.75;color:#888;flex:1;">Lancer une campagne c'est bien ; savoir ce qui fonctionne vraiment, c'est mieux. Je vous accompagne dans l'analyse et l'amélioration continue de vos actions marketing.
+            <ul style="margin-top:.6rem;padding-left:1rem;line-height:1.8;">
+              <li><strong style="color:#666;">Reporting & analytics</strong> — Suivi des performances de vos campagnes avec des indicateurs clairs et actionnables.</li>
+              <li><strong style="color:#666;">Tests & ajustements</strong> — Optimisation continue basée sur les données pour améliorer vos résultats au fil du temps.</li>
+              <li><strong style="color:#666;">Recommandations stratégiques</strong> — Conseils personnalisés pour affiner votre approche et maximiser votre impact.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="en camp-grid" style="display:flex;gap:1.5rem;margin-top:2.5rem;align-items:stretch;">
+
+        <!-- Meta & Google Ads -->
+        <div style="flex:1;background:#fff;border:1.5px solid var(--pink-mid);padding:1.5rem;display:flex;flex-direction:column;">
+          <div style="background:var(--pink);margin:-1.5rem -1.5rem 1.2rem;padding:.8rem 1.1rem;border-bottom:1.5px solid var(--pink-mid);display:flex;justify-content:space-between;">
+            <span style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia);font-weight:700;font-family:'Montserrat',sans-serif;">Meta &amp; Google Ads</span>
+            <span>📊</span>
+          </div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--black);margin-bottom:.6rem;">Digital Advertising</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:.77rem;line-height:1.75;color:#888;flex:1;">Digital advertising is much more than boosting a post. It's about targeting the right people, at the right time, with the right message — turning every euro invested into a concrete result.
+            <ul style="margin-top:.6rem;padding-left:1rem;line-height:1.8;">
+              <li><strong style="color:#666;">Meta Ads</strong> — Creating and managing your Facebook and Instagram campaigns, from targeting to optimization.</li>
+              <li><strong style="color:#666;">Google Ads</strong> — Setting up Search and Display campaigns to capture your audience the moment they're actively looking.</li>
+              <li><strong style="color:#666;">Tracking & optimization</strong> — Performance analysis, ongoing adjustments, and clear reporting to maximize your return on investment.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Email Marketing -->
+        <div style="flex:1;background:#fff;border:1.5px solid var(--pink-mid);padding:1.5rem;display:flex;flex-direction:column;">
+          <div style="background:var(--pink);margin:-1.5rem -1.5rem 1.2rem;padding:.8rem 1.1rem;border-bottom:1.5px solid var(--pink-mid);display:flex;justify-content:space-between;">
+            <span style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia);font-weight:700;font-family:'Montserrat',sans-serif;">Email Marketing</span>
+            <span>✉️</span>
+          </div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--black);margin-bottom:.6rem;">Email Campaigns</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:.77rem;line-height:1.75;color:#888;flex:1;">A good email doesn't end up in spam; it makes people want to open it, read it, and take action. I design email campaigns built to engage your audience and generate real results.
+            <ul style="margin-top:.6rem;padding-left:1rem;line-height:1.8;">
+              <li><strong style="color:#666;">Email sequences</strong> — Building automated flows to welcome, retain, or convert your contacts.</li>
+              <li><strong style="color:#666;">Email copywriting</strong> — Punchy copy, in your tone, so every email gets read to the end.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tracking & Optimization -->
+        <div style="flex:1;background:#fff;border:1.5px solid var(--pink-mid);padding:1.5rem;display:flex;flex-direction:column;">
+          <div style="background:var(--pink);margin:-1.5rem -1.5rem 1.2rem;padding:.8rem 1.1rem;border-bottom:1.5px solid var(--pink-mid);display:flex;justify-content:space-between;">
+            <span style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia);font-weight:700;font-family:'Montserrat',sans-serif;">Tracking &amp; Optimization</span>
+            <span>📈</span>
+          </div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--black);margin-bottom:.6rem;">Analysis &amp; Continuous Improvement</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:.77rem;line-height:1.75;color:#888;flex:1;">Launching a campaign is good; knowing what really works is better. I help you analyze and continuously improve your marketing actions.
+            <ul style="margin-top:.6rem;padding-left:1rem;line-height:1.8;">
+              <li><strong style="color:#666;">Reporting & analytics</strong> — Tracking your campaign performance with clear, actionable metrics.</li>
+              <li><strong style="color:#666;">Testing & adjustments</strong> — Ongoing, data-driven optimization to improve your results over time.</li>
+              <li><strong style="color:#666;">Strategic recommendations</strong> — Personalized advice to refine your approach and maximize your impact.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+const c=document.getElementById('c'),cr=document.getElementById('cr');
+document.addEventListener('mousemove',e=>{
+  c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';
+  setTimeout(()=>{cr.style.left=e.clientX+'px';cr.style.top=e.clientY+'px';},55);
+});
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.toggle('on',t.dataset.p===id));
+  const pg=document.getElementById('pg-'+id);
+  if(pg){pg.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+  const navTabs=document.getElementById('navTabs');
+  const navOverlay=document.getElementById('navOverlay');
+  if(navTabs){navTabs.classList.remove('open');}
+  if(navOverlay){navOverlay.classList.remove('open');}
+}
+function toggleNavMenu(){
+  document.getElementById('navTabs').classList.toggle('open');
+  document.getElementById('navOverlay').classList.toggle('open');
+}
+function setLang(lang){
+  document.documentElement.setAttribute('lang-mode', lang);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelector('.'+lang+'-btn').classList.add('on');
+  try{localStorage.setItem('ica-lang', lang);}catch(e){}
+}
+(function(){
+  var saved = null;
+  try{saved = localStorage.getItem('ica-lang');}catch(e){}
+  if(saved==='en'){setLang('en');}
+})();
+function submitForm(e){
+  e.preventDefault();
+  const b=e.target.querySelector('.c-btn');
+  const isEn = document.documentElement.getAttribute('lang-mode')==='en';
+  b.textContent = isEn ? 'Message sent ✓' : 'Message envoyé ✓';
+  b.style.background='var(--black)';
+  setTimeout(()=>{b.textContent = isEn ? 'Send message →' : 'Envoyer le message →';b.style.background='';e.target.reset();},3000);
+}
+</script>
+
+<!-- LIGHTBOX -->
+
+<footer style="background:var(--black);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;">
+  <div class="ft-name"><b>ICA</b>&nbsp; Inesse Cecilio Alouhmy</div>
+  <div class="ft-sub fr">Marketing Strategist</div>
+  <div class="ft-sub en">Marketing Strategist</div>
+</footer>
+
+<div class="lb-overlay" id="lb" onclick="if(event.target===this)closeLb()">
+  <div class="lb-close" onclick="closeLb()">×</div>
+  <div class="lb-content" id="lb-content">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
+<!-- MAGAZINE VIEWER -->
+<div class="lb-overlay" id="mag-lb" onclick="if(event.target===this)closeMag()">
+  <div class="lb-close" onclick="closeMag()">×</div>
+  <div class="mag-viewer">
+    <img id="mag-img" src="img10.jpg" alt="Magazine AKSEL">
+    <div class="mag-nav">
+      <button onclick="magPrev()" id="mag-prev" disabled>← Précédent</button>
+      <span class="mag-page-count"><span id="mag-cur">1</span> / 18</span>
+      <button onclick="magNext()" id="mag-next">Suivant →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// LIGHTBOX
+function openLb(src, caption) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-caption').textContent = caption || '';
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function openLb2(src, capFr, capEn) {
+  const isEn = document.documentElement.getAttribute('lang-mode')==='en';
+  openLb(src, isEn ? capEn : capFr);
+}
+function closeLb() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// MAGAZINE
+const magPages = ["img10.jpg",
+"img14.jpg",
+"img15.jpg",
+"img16.jpg",
+"img17.jpg",
+"img18.jpg",
+"img19.jpg",
+"img20.jpg",
+"img21.jpg",
+"img22.jpg",
+"img23.jpg",
+"img24.jpg",
+"img25.jpg",
+"img26.jpg",
+"img27.jpg",
+"img28.jpg",
+"img29.jpg",
+"img30.jpg"];
+let magCur = 0;
+function openMag() {
+  magCur = 0;
+  updateMag();
+  document.getElementById('mag-lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMag() {
+  document.getElementById('mag-lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function updateMag() {
+  document.getElementById('mag-img').src = magPages[magCur];
+  document.getElementById('mag-cur').textContent = magCur + 1;
+  document.getElementById('mag-prev').disabled = magCur === 0;
+  document.getElementById('mag-next').disabled = magCur === magPages.length - 1;
+}
+function magPrev() { if(magCur > 0) { magCur--; updateMag(); } }
+function magNext() { if(magCur < magPages.length-1) { magCur++; updateMag(); } }
+document.addEventListener('keydown', e => {
+  if(document.getElementById('lb').classList.contains('open') && e.key==='Escape') closeLb();
+  if(document.getElementById('mag-lb').classList.contains('open')) {
+    if(e.key==='Escape') closeMag();
+    if(e.key==='ArrowLeft') magPrev();
+    if(e.key==='ArrowRight') magNext();
+  }
+});
+</script>
+
+</body>
+</html>
