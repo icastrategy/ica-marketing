@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://icastrategy.github.io/ica-marketing/sitemap.xml
