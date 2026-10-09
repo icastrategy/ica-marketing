@@ -303,7 +303,7 @@ body.menu-open .bubble{display:none;}
 .next-link a:hover{color:var(--blanc);text-decoration-color:var(--blanc);}
 
 /* Bloc contact de fin de page */
-.cta-end{background:var(--rose-clair);border-top:1.5px solid var(--ligne);padding:4rem 3rem;text-align:center;}
+.cta-end{background:linear-gradient(to bottom,var(--ivoire-clair) 0,var(--rose-clair) 80px);padding:4rem 3rem;text-align:center;}
 .cta-end-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.05;letter-spacing:-.02em;color:var(--bordeaux);margin-bottom:1rem;}
 .cta-end-title span{color:var(--fuchsia);}
 .cta-end-text{font-family:'Courier Prime',monospace;font-size:.92rem;line-height:1.7;color:var(--bordeaux-profond);max-width:560px;margin:0 auto 2rem;}
@@ -311,6 +311,11 @@ body.menu-open .bubble{display:none;}
 .cta-end-link{font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:700;color:var(--bordeaux);text-decoration:underline;text-decoration-color:var(--fuchsia-fonce);text-underline-offset:4px;}
 .cta-end-link:hover{color:var(--fuchsia-fonce);}
 .hero-btn .ic{width:1rem;height:1rem;}
+
+/* Fondus ivoire vers rose clair */
+.skills-section + .cta-end,.projects-section + .cta-end{background:linear-gradient(to bottom,var(--ivoire) 0,var(--rose-clair) 80px);}
+.next-link + .cta-end{background:var(--rose-clair);}
+.contact-section{background:linear-gradient(to bottom,var(--ivoire) 0,var(--rose-clair) 80px);}
 
 /* FAQ, Blog, Mentions légales */
 .simple-section{background:var(--ivoire-clair);padding:3rem 3rem 4rem;position:relative;}
