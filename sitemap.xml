@@ -11,6 +11,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.github.io/ica-marketing/en/"/>
   </url>
   <url>
+    <loc>https://icastrategy.github.io/ica-marketing/a-propos/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://icastrategy.github.io/ica-marketing/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.github.io/ica-marketing/en/a-propos/"/>
+  </url>
+  <url>
+    <loc>https://icastrategy.github.io/ica-marketing/en/a-propos/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://icastrategy.github.io/ica-marketing/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.github.io/ica-marketing/en/a-propos/"/>
+  </url>
+  <url>
     <loc>https://icastrategy.github.io/ica-marketing/branding/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://icastrategy.github.io/ica-marketing/branding/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.github.io/ica-marketing/en/branding/"/>
