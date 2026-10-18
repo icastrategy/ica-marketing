@@ -1,0 +1,625 @@
+/* =====================================================================
+   VERSION FINALE : mise en page V2 + polices et couleurs V1,
+   fondus à chaque changement de couleur, plus de vert, sections V1 isolées (.v1)
+   ===================================================================== */
+:root{
+  --serif:'Montserrat',sans-serif;
+  --sans:'Montserrat',sans-serif;
+  --mono:'Courier Prime',monospace;
+  --script:'Dancing Script',cursive;
+  --rose:#F9D2DE;
+  --ombre:#DDD2BC;
+}
+body{background:#F8F5EE;}
+body::after{opacity:.035;}
+
+/* ----- Polices de la V1 ----- */
+.h-display,.h1,.h2,.h3,.statement,.svc-name,.work-info h3,.case h3,.exp h3,.note h3,.job h3,.lang-card h3,.ft-claim,
+.menu-links a,.promise-big,.step-n,.step h3,.contact-form h3,.lang-iso,.next .h1,.bubble-head,.empty .h2{
+  font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:-.035em;}
+.h1 em,.h2 em,.h3 em,.h-display em,.statement em,.ft-claim em,.case h3 em{font-style:normal;color:var(--fuchsia);}
+.h-display{font-size:clamp(3rem,10.5vw,10.8rem);line-height:.9;}
+.h1{font-size:clamp(2.6rem,6.6vw,6.6rem);line-height:.95;}
+.h2{font-size:clamp(2rem,4.2vw,3.8rem);line-height:1;}
+.statement{font-weight:800;font-size:clamp(1.6rem,3.3vw,3.1rem);line-height:1.15;letter-spacing:-.02em;}
+main p,main li,.lead,.faq details p,.for p,.contact-form p{font-family:'Courier Prime',monospace;}
+.lead{font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.7;}
+.eyebrow,.tag,.btn,.quote-note,.crumb,.hero-meta,.statement-side,.case-cat,.car-count,.car-hint,.hero-scroll,.folder,.work-badge{font-family:'Montserrat',sans-serif;}
+.eyebrow{font-weight:700;font-size:.72rem;letter-spacing:.2em;}
+.btn{font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;}
+.logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-.01em;}
+.logo span{font-style:normal;}
+.nav a,.lang,.hd-cta{font-family:'Montserrat',sans-serif;font-weight:600;}
+.nav a{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+
+/* ----- Hero ----- */
+.hero-welcome{font-family:var(--script);font-style:normal;font-weight:700;font-size:clamp(2.2rem,4.8vw,4.6rem);color:var(--bordeaux);margin-bottom:.1em;}
+.hero-mk{font-family:var(--script);font-weight:700;color:var(--fuchsia);letter-spacing:0;font-size:.82em;line-height:1.05;display:inline-block;padding:0 .1em;}
+.hero{min-height:calc(100svh - 0px);}
+.folders{display:flex;gap:2rem;align-items:flex-end;}
+.folder{display:flex;flex-direction:column;align-items:center;gap:.35rem;font-size:.78rem;color:var(--texte-doux);font-weight:600;}
+.folder svg{width:58px;height:auto;transition:transform .5s var(--ease);}
+.folder:hover svg{transform:translateY(-5px) rotate(-5deg);}
+.hero-scroll{justify-content:space-between;}
+.hero-scroll > span{display:flex;align-items:center;gap:.6rem;}
+@media(max-width:600px){.folders{gap:1rem;}.folder svg{width:44px;}.folder{font-size:.7rem;}}
+
+/* ----- Bandes de couleur et fondus ----- */
+.band{position:relative;}
+.band > section,.band > div > section,.band > .marquee{background:transparent!important;}
+.band-top{padding-top:76px;}
+.v1-page{padding-top:76px;}
+
+/* Bandeau défilant en vert */
+.marquee{border:none;}
+.marquee-track span{color:#F8F5EE;font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:-.02em;text-transform:uppercase;font-size:clamp(1.4rem,2.8vw,2.4rem);}
+.marquee-track span:nth-child(even){font-style:normal;color:#E6E8CF;font-family:var(--script);text-transform:none;font-weight:700;font-size:clamp(1.8rem,3.4vw,3rem);letter-spacing:0;}
+.marquee-track span::after{background:var(--rose);}
+
+/* ----- Contact (rose clair, comme la V1) ----- */
+.sec-rose{color:var(--bordeaux);}
+.sec-rose .eyebrow{color:var(--olive);}
+.sec-rose .lead{color:var(--bordeaux)!important;}
+.sec-rose .h-display{font-size:clamp(2.8rem,6.6vw,6.8rem);}
+.sec-rose .h-display em{color:var(--fuchsia-fonce);}
+.sec-rose .reassure li{border-color:rgba(74,26,31,.2);background:rgba(255,253,249,.6);font-family:'Montserrat',sans-serif;font-weight:600;}
+.sec-rose .reassure .ic,.sec-rose .contact-lines .ic{color:var(--olive);}
+.sec-rose .contact-lines{border-top-color:rgba(74,26,31,.18);}
+.sec-rose .contact-lines a{border-bottom-color:rgba(74,26,31,.18);font-family:'Montserrat',sans-serif;font-weight:600;}
+.sec-rose .contact-lines a:hover{color:var(--fuchsia-fonce);}
+.sec-rose .contact-form{background:#FFFDF9;box-shadow:8px 8px 0 var(--ombre);}
+
+/* ----- Pied de page vert, nom en petit ----- */
+.ft h4{color:#dfe0c4;font-family:'Montserrat',sans-serif;}
+.ft a,.ft li{font-family:'Montserrat',sans-serif;}
+.ft-word{font-size:clamp(1.3rem,2.4vw,2rem);font-weight:800;letter-spacing:-.01em;white-space:normal;padding-top:1.4rem;color:#F8F5EE;}
+.ft-word em{color:var(--rose);font-style:normal;}
+.ft-bottom{color:#e4e5cf;font-family:'Montserrat',sans-serif;}
+.ft-claim{font-size:clamp(1.3rem,2.2vw,1.9rem);line-height:1.2;color:#F8F5EE;}
+.ft-claim em{color:var(--rose)!important;}
+
+/* ----- Menu plein écran en vert ----- */
+.menu{background:var(--olive);color:#F8F5EE;}
+.menu-links a small{color:var(--rose);}
+.menu-links a{text-transform:uppercase;font-size:clamp(1.9rem,7vw,3.6rem);}
+.menu-links a:hover,.menu-links a[aria-current="page"]{color:var(--rose);}
+.menu-foot{color:#e4e5cf;}
+
+/* ----- Livrables et projets ----- */
+.deliver li{font-family:'Courier Prime',monospace;}
+.deliver li span{font-family:'Montserrat',sans-serif;font-style:normal;font-weight:900;color:var(--olive);}
+.quote-note{background:var(--olive);color:#F8F5EE;}
+.case h3{font-size:clamp(1.8rem,3vw,2.8rem);}
+.case-media{box-shadow:10px 10px 0 var(--ombre);}
+.case{border-top:none;padding:1rem 0 0;}
+
+/* Carrousel : un projet à la fois */
+.car-ctrl{display:flex;align-items:center;gap:.8rem;justify-self:end;}
+.car-btn{width:58px;height:58px;border-radius:50%;border:1.5px solid var(--bordeaux);background:#FFFDF9;color:var(--bordeaux);font-size:1.3rem;cursor:pointer;transition:background .3s,color .3s,transform .3s var(--ease);}
+.car-btn:hover:not(:disabled){background:var(--bordeaux);color:#F8F5EE;}
+.car-btn.car-next{background:var(--fuchsia-fonce);border-color:var(--fuchsia-fonce);color:#fff;}
+.car-btn.car-next:hover:not(:disabled){background:var(--bordeaux);border-color:var(--bordeaux);transform:translateX(3px);}
+.car-btn:disabled{opacity:.3;cursor:default;}
+.car-count{font-weight:600;font-size:.95rem;min-width:3.2rem;text-align:center;}
+.car-count b{color:var(--fuchsia-fonce);font-size:1.3rem;}
+.car-slide{animation:carIn .6s var(--ease);}
+@keyframes carIn{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:none;}}
+.car-dots{display:flex;gap:.5rem;justify-content:center;margin-top:2rem;}
+.car-dots button{width:10px;height:10px;border-radius:99px;border:none;background:var(--ligne);cursor:pointer;transition:width .4s var(--ease),background .3s;}
+.car-dots button[aria-current="true"]{width:30px;background:var(--fuchsia);}
+.car-hint{text-align:center;margin-top:.9rem;font-size:.82rem;font-weight:600;color:var(--olive);}
+@media(max-width:820px){.car-ctrl{justify-self:start;}.car-btn{width:50px;height:50px;}}
+
+/* ----- FAQ plus colorée ----- */
+.faq-page .h1 em{color:var(--fuchsia);}
+.faq details{background:#FFFDF9;border:1.5px solid var(--ligne)!important;margin-bottom:.8rem;padding:0 1.4rem;box-shadow:6px 6px 0 var(--ombre);transition:box-shadow .3s,border-color .3s;}
+.faq details:hover{border-color:var(--fuchsia)!important;}
+.faq details[open]{border-color:var(--olive)!important;box-shadow:6px 6px 0 #C9CCA4;}
+.faq summary{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(1.05rem,1.6vw,1.35rem);letter-spacing:-.01em;}
+.faq-n{font-weight:900;color:var(--fuchsia);margin-right:.9rem;}
+.faq-q{flex:1;}
+.faq details[open] summary i{background:var(--olive);border-color:var(--olive);}
+
+/* ----- Divers ----- */
+.empty{background:#FFFDF9;border:1.5px dashed var(--olive-clair);}
+.sec-head .eyebrow::before{background:var(--fuchsia);}
+.legal dt{font-family:'Montserrat',sans-serif;}
+
+/* ----- Garde-fous : la V2 ne doit pas déborder sur les sections V1 ----- */
+.v1 .svc-arr{width:auto;height:auto;border:none;border-radius:0;display:block;background:none;transform:none;}
+.v1 .svc-n,.v1 .svc-name{transform:none;}
+.v1 .svc-row:hover .svc-arr{transform:translateX(4px);}
+.v1 img{height:auto;}
+.v1 button{font:inherit;}
+.band-promises .v1 .ab-sec{background:transparent!important;}
+
+.v1{background:transparent!important;}
+.v1 .svc-n{font-style:normal;}
+.ft .ft-claim em{color:#F9D2DE!important;font-weight:900;font-style:normal;}
+.car-slide[hidden]{display:none!important;}
+.carousel .case,.carousel .case:nth-child(even){grid-template-columns:1.35fr 1fr;}
+.carousel .case .case-media,.carousel .case:nth-child(even) .case-media{order:0;}
+@media(max-width:860px){.carousel .case,.carousel .case:nth-child(even){grid-template-columns:1fr;}}
+.h1 em,.h2 em,.h3 em,.h-display em,.statement em,.ft-claim em,.case h3 em,.empty .h2 em{font-weight:inherit;font-family:inherit;}
+.carousel .case > *{min-width:0;}
+@media(max-width:860px){.carousel .case,.carousel .case:nth-child(even){grid-template-columns:minmax(0,1fr);}}
+.carousel{overflow-x:clip;padding:0 12px 14px 0;margin-right:-12px;}
+
+/* ----- Avis clients qui défilent ----- */
+.reviews{overflow:hidden;}
+.rev-score{display:flex;align-items:center;gap:.6rem;justify-self:end;font-family:'Montserrat',sans-serif;font-weight:600;color:var(--bordeaux);}
+.rev-score b{font-size:1.4rem;color:var(--fuchsia-fonce);}
+.rev-stars{display:inline-flex;gap:2px;}
+.rev-stars svg{width:18px;height:18px;fill:#E8A33D;}
+.rev-viewport{overflow:hidden;padding:12px 0 26px;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);}
+.rev-track{display:flex;gap:1.4rem;width:max-content;animation:revs 55s linear infinite;padding-left:1.4rem;}
+.rev-viewport:hover .rev-track{animation-play-state:paused;}
+@keyframes revs{to{transform:translateX(-50%);}}
+.rev-card{width:min(400px,82vw);flex-shrink:0;background:#FFFDF9;border:1.5px solid var(--ligne);border-radius:16px;padding:1.6rem 1.6rem 1.4rem;display:flex;flex-direction:column;gap:1rem;box-shadow:8px 8px 0 var(--ombre);}
+.rev-card blockquote{font-family:'Courier Prime',monospace;font-size:.95rem;line-height:1.65;color:var(--texte);flex:1;}
+.rev-card figcaption{display:flex;align-items:center;gap:.8rem;font-family:'Montserrat',sans-serif;border-top:1px solid var(--ligne);padding-top:1rem;}
+.rev-card figcaption b{display:block;font-weight:800;color:var(--bordeaux);}
+.rev-card figcaption small{display:block;font-size:.78rem;color:var(--olive);font-weight:600;}
+.rev-av{width:42px;height:42px;border-radius:50%;background:var(--rose);color:var(--fuchsia-fonce);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;flex-shrink:0;}
+.rev-note{text-align:center;font-size:.8rem;color:var(--texte-doux);font-family:'Montserrat',sans-serif;}
+@media(prefers-reduced-motion:reduce){.rev-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;}.rev-card[aria-hidden="true"]{display:none;}}
+@media(max-width:820px){.rev-score{justify-self:start;}}
+
+/* =====================================================================
+   COULEURS FRANCHES (consignes : plus de vert, moins de beige, fondus)
+   rose clair #F9D2DE · vert olive clair #B9BC94 · vert olive #5A6130
+   ===================================================================== */
+/* Bandes vert clair : textes bordeaux lisibles */
+.band-vert .eyebrow,.band-vert .statement-side,.band-vert .muted{color:var(--bordeaux);}
+.band-vert .eyebrow::before{background:var(--fuchsia-fonce);}
+.band-vert .statement .w{opacity:.22;}
+.band-vert .statement .w.on{opacity:1;}
+.band-vert .deliver{border-top-color:rgba(74,26,31,.25);}
+.band-vert .deliver li{border-bottom-color:rgba(74,26,31,.25);color:var(--bordeaux);}
+.band-vert .deliver li span{color:#FFFDF9;background:var(--olive);border-radius:99px;min-width:2.2rem;height:2.2rem;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;}
+.band-vert .quote-note{background:var(--fuchsia-fonce);}
+.band-vert .empty{background:#FFFDF9;border-color:var(--olive);}
+.band-vert .v1 .cta-end-text{color:var(--bordeaux);}
+
+/* Hero sur rose */
+.band-hero .hero-meta{border-bottom-color:rgba(74,26,31,.18);color:var(--bordeaux);}
+.band-hero .hero-photo{box-shadow:10px 10px 0 var(--olive);}
+.band-hero .folder span{color:var(--bordeaux);}
+
+/* Services V1 avec les effets de couleur de la V2 */
+.band-services .v1 .svc-row{background:#FFFDF9;}
+.band-services .v1 .svc-row:hover{background:var(--olive);border-color:var(--olive);transform:translateX(6px);box-shadow:6px 6px 0 var(--bordeaux);}
+.band-services .v1 .svc-row:hover .svc-name,.band-services .v1 .svc-row:hover .svc-arr{color:#FFFDF9;}
+.band-services .v1 .svc-row:hover .svc-n{color:var(--rose);}
+.band-services .v1 .svc-row:hover .svc-tag{color:#FFFDF9;border-color:rgba(255,253,249,.5);}
+.band-services .v1 .section-eye{color:var(--bordeaux);}
+
+/* Bloc foncé vert olive (engagements) */
+.band-dark .v1 .section-title,.band-dark .v1 .ab-head .section-title{color:#FFFDF9;}
+.band-dark .v1 .section-title .pk{color:var(--rose);}
+.band-dark .v1 .section-eye{color:var(--rose);}
+.band-dark .v1 .section-eye::before{background:var(--rose);}
+.band-dark .v1 .ab-hint{color:#E6E8CF;}
+.band-dark .v1 .ab-pr-front,.band-dark .v1 .ab-pr-back{box-shadow:8px 8px 0 #3E4321;}
+
+/* Bandeau défilant : contraste sur olive */
+.marquee-track span:nth-child(even){color:var(--rose);}
+
+/* FAQ sur rose */
+.faq-page .eyebrow{color:var(--olive);}
+.faq-page .faq details{box-shadow:6px 6px 0 var(--olive-clair);}
+
+/* Avis sur ivoire foncé */
+.reviews .eyebrow{color:var(--olive);}
+
+/* Contact de l'accueil : bordeaux profond (choix d'Inesse) */
+.band-bordeaux{color:#F8F5EE;}
+.band-bordeaux .sec-rose{color:#F8F5EE;}
+.band-bordeaux .eyebrow{color:var(--rose);}
+.band-bordeaux .eyebrow::before{background:var(--fuchsia);}
+.band-bordeaux .h-display{color:#F8F5EE;}
+.band-bordeaux .h-display em{color:var(--fuchsia);}
+.band-bordeaux .lead{color:#EBDCD8!important;}
+.band-bordeaux .reassure li{border-color:rgba(248,245,238,.28);background:transparent;color:#F8F5EE;}
+.band-bordeaux .reassure .ic,.band-bordeaux .contact-lines .ic{color:var(--rose);}
+.band-bordeaux .contact-lines{border-top-color:rgba(248,245,238,.2);}
+.band-bordeaux .contact-lines a{border-bottom-color:rgba(248,245,238,.2);color:#F8F5EE;}
+.band-bordeaux .contact-lines a:hover{color:var(--rose);}
+.band-bordeaux .contact-form{background:#F8F5EE;color:var(--bordeaux);box-shadow:none;border-radius:20px;}
+
+/* =====================================================================
+   HAUT DE PAGE : « dossier de travail » (dossiers avec vrais projets)
+   ===================================================================== */
+.hero-desk{min-height:auto;padding-bottom:5rem;}
+.desk-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;}
+.desk-text .h-display{font-size:clamp(3rem,8.6vw,8.8rem);}
+.desk-text .lead{margin-top:1.6rem;max-width:34ch;}
+.desk-text .hero-actions{justify-content:flex-start;margin-top:1.6rem;}
+.desk{position:relative;display:flex;flex-direction:column;align-items:center;gap:1.4rem;padding-top:3rem;}
+.desk > .pf + .pf{margin-top:-1rem;}
+.desk{display:grid;grid-template-columns:1fr 1fr;justify-items:center;align-items:end;column-gap:1.4rem;}
+.desk-hint{grid-column:1/-1;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:600;color:var(--bordeaux);opacity:.75;}
+
+.pf{--back:#8F9468;--front:#B9BC94;--ink:#3B1418;position:relative;width:min(250px,40vw);aspect-ratio:5/4;cursor:pointer;outline:none;perspective:900px;}
+.pf-bord{--back:#3B1418;--front:#5B2228;--ink:#F8F5EE;}
+.pf-back{position:absolute;inset:12% 0 0 0;background:var(--back);border-radius:6px 14px 14px 14px;box-shadow:0 18px 30px -18px rgba(59,20,24,.6);}
+.pf-back::before{content:'';position:absolute;top:-11%;left:0;width:42%;height:14%;background:var(--back);border-radius:10px 10px 0 0;}
+.pf-docs{position:absolute;left:8%;right:8%;bottom:18%;height:80%;}
+.pf-doc{position:absolute;bottom:0;width:62%;aspect-ratio:4/3;background:#fff;border-radius:4px;box-shadow:0 6px 14px rgba(0,0,0,.18);overflow:hidden;transform-origin:50% 100%;transition:transform .6s var(--ease);text-decoration:none;}
+.pf-doc img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.pf-doc span{position:absolute;left:0;right:0;bottom:0;background:rgba(59,20,24,.88);color:#F8F5EE;font:700 .62rem/1.2 'Montserrat',sans-serif;padding:.35rem .4rem;text-align:center;opacity:0;transition:opacity .3s;}
+.pf-d1{left:0;transform:translateY(-14%) rotate(-7deg);}
+.pf-d2{left:12%;transform:translateY(-22%) rotate(-2deg);}
+.pf-d3{left:26%;transform:translateY(-18%) rotate(4deg);}
+.pf-d4{left:38%;transform:translateY(-12%) rotate(9deg);}
+.pf-front{position:absolute;left:0;right:0;bottom:0;height:62%;background:var(--front);border-radius:8px 8px 14px 14px;transform-origin:50% 100%;transition:transform .6s var(--ease);display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 .9rem .9rem;box-shadow:inset 0 2px 0 rgba(255,255,255,.25);z-index:2;}
+.pf-label{font:800 .78rem/1.1 'Montserrat',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);}
+.pf-open{font:700 .7rem 'Montserrat',sans-serif;color:var(--ink);opacity:0;text-decoration:none;margin-top:.3rem;transition:opacity .3s;}
+.pf-badge{position:absolute;top:2%;right:-6%;z-index:3;background:var(--fuchsia-fonce);color:#fff;font:800 .66rem 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .7rem;border-radius:99px;transform:rotate(6deg);box-shadow:0 4px 10px rgba(201,53,115,.35);}
+/* Ouverture : le dossier bascule, les projets s'éventaillent */
+.pf:hover .pf-front,.pf:focus-within .pf-front,.pf.open .pf-front{transform:rotateX(-28deg);}
+.pf:hover .pf-open,.pf:focus-within .pf-open,.pf.open .pf-open{opacity:1;}
+.pf:hover .pf-doc span,.pf.open .pf-doc span,.pf:focus-within .pf-doc span{opacity:1;}
+.pf:hover .pf-d1,.pf.open .pf-d1,.pf:focus-within .pf-d1{transform:translate(-38%,-78%) rotate(-16deg);}
+.pf:hover .pf-d2,.pf.open .pf-d2,.pf:focus-within .pf-d2{transform:translate(-10%,-98%) rotate(-5deg);}
+.pf:hover .pf-d3,.pf.open .pf-d3,.pf:focus-within .pf-d3{transform:translate(14%,-96%) rotate(6deg);}
+.pf:hover .pf-d4,.pf.open .pf-d4,.pf:focus-within .pf-d4{transform:translate(40%,-74%) rotate(16deg);}
+.pf .pf-doc:hover{z-index:5;}
+.pf .pf-doc:hover img{transform:scale(1.04);}
+/* Photo trombonée sur le premier dossier */
+.pf-photo{position:absolute;left:-22%;top:-38%;width:46%;background:#fff;padding:6px 6px 22px;box-shadow:0 10px 20px rgba(0,0,0,.2);transform:rotate(-8deg);z-index:4;transition:transform .5s var(--ease);}
+.pf-photo img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 35%;}
+.pf-photo figcaption{position:absolute;left:0;right:0;bottom:3px;text-align:center;font:700 .85rem var(--script);color:var(--bordeaux);}
+.pf-clip{position:absolute;top:-14px;left:18%;width:14px;height:40px;border:2.5px solid #C9A7B4;border-radius:8px;border-bottom-color:transparent;transform:rotate(8deg);}
+.pf:hover .pf-photo{transform:rotate(-12deg) translate(-8px,-6px);}
+@media(max-width:900px){
+  .desk-grid{grid-template-columns:1fr;}
+  .desk{padding-top:4.5rem;margin-top:1rem;}
+}
+@media(max-width:520px){
+  .pf{width:42vw;}
+  .pf-photo{left:-8%;top:-48%;width:44%;}
+  .pf-label{font-size:.62rem;}
+  .pf-badge{font-size:.58rem;right:-2%;}
+}
+
+/* Ruban défilant bordeaux, incliné, qui chevauche rose et ivoire */
+.ribbon-wrap{position:relative;z-index:6;height:0;}
+.ribbon-wrap .marquee{position:absolute;left:-2%;right:-2%;top:0;transform:translateY(-50%) rotate(-1.6deg);background:var(--bordeaux)!important;border:none;box-shadow:0 14px 30px -12px rgba(59,20,24,.45);padding:.9rem 0;}
+.ribbon-wrap .marquee-track span{color:#F8F5EE;}
+.ribbon-wrap .marquee-track span:nth-child(even){color:var(--rose);}
+.ribbon-wrap .marquee-track span::after{background:var(--fuchsia);}
+.ribbon-wrap + .band .sec{padding-top:clamp(6rem,12vw,10rem);}
+body{overflow-x:hidden;}
+
+/* Flèches du carrousel de chaque côté du projet */
+.carousel{position:relative;overflow:visible!important;padding:0 72px 14px!important;margin-right:0!important;}
+.car-side{position:absolute;top:calc(50% - 30px);z-index:4;width:60px;height:60px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease),background .3s,color .3s;}
+.car-left{left:0;background:#FFFDF9;border:1.5px solid var(--bordeaux);color:var(--bordeaux);}
+.car-right{right:0;background:var(--fuchsia-fonce);border:1.5px solid var(--fuchsia-fonce);color:#fff;box-shadow:0 8px 18px -6px rgba(201,53,115,.5);}
+.car-left:hover{background:var(--bordeaux);color:#FFFDF9;transform:translateX(-3px);}
+.car-right:hover{background:var(--bordeaux);border-color:var(--bordeaux);transform:translateX(3px);}
+.car-ctrl{justify-self:end;}
+@media(max-width:860px){
+  .carousel{padding:0 0 14px!important;}
+  .car-side{top:min(26vw,190px);width:48px;height:48px;font-size:1.15rem;}
+  .car-left{left:-6px;}.car-right{right:-6px;}
+}
+.ribbon-wrap{overflow-x:clip;}
+
+/* =====================================================================
+   FONDUS NATURELS : fonds clairs seulement + panneaux foncés arrondis
+   ===================================================================== */
+/* Panneaux vert olive et bordeaux, posés sur les fonds clairs */
+.band-panel{padding:clamp(1.2rem,3vw,2.6rem) 0;}
+.panel{margin:0 clamp(12px,3vw,40px);border-radius:clamp(24px,3vw,44px);overflow:hidden;box-shadow:0 30px 60px -40px rgba(59,20,24,.55);}
+.panel > section,.panel > div > section,.panel .v1 > section{background:transparent!important;}
+.band-next{padding:clamp(1rem,2.4vw,2rem) 0;}
+.band-next .panel{border-radius:999px;}
+.panel .v1 .next-link{background:transparent!important;padding:1.6rem 2rem;}
+@media(max-width:700px){.band-next .panel{border-radius:24px;}}
+
+/* Pied de page : panneau vert arrondi en haut, sur le fond de la page */
+.ft.ft-outer{background:transparent;padding:clamp(1.5rem,3vw,2.6rem) 0 0!important;color:#F8F5EE;}
+.ft-panel{background:var(--olive);margin:0 clamp(12px,3vw,40px);border-radius:clamp(24px,3vw,44px) clamp(24px,3vw,44px) 0 0;padding:clamp(3rem,6vw,5rem) 0 2rem;}
+@media(max-width:700px){.ft-panel{padding-bottom:6rem;}}
+
+/* Plus aucun trait de séparation */
+.v1 .cta-end{border-top:none!important;}
+.sec-head h2{border-top:none!important;padding-top:0!important;}
+.hero-meta{border-bottom:none!important;}
+.ft-word,.ft-cols{border-top:none!important;}
+.v1 .next-link{border:none!important;}
+.contact-lines,.contact-lines a{border-color:transparent!important;}
+.band-bordeaux .contact-lines a{background:rgba(248,245,238,.06);border-radius:12px;padding:1rem 1.1rem;margin-bottom:.5rem;}
+.band-bordeaux .contact-lines{margin-top:2rem;}
+
+/* Aucun trait entre les blocs (bordures héritées de la V1 et de la V2) */
+.band > section,.band > div > section,.band .v1 > section,.panel section,.band > .wrap,.band .marquee{border-top:none!important;border-bottom:none!important;}
+.v1 .services-section,.v1 .process-section,.v1 .projects-section,.v1 .cat-intro,.v1 .cta-end,.v1 .simple-section,.v1 .ab-sec,.v1 .ab-hero{border-top:none!important;border-bottom:none!important;}
+.v1 .projects-section::before{display:none!important;}
+.v1 .svc-list{border-top:none!important;}
+.ft,.ft.ft-outer{border:none!important;}
+.deliver,.deliver li{border-top:none!important;border-bottom:none!important;}
+.deliver li{background:rgba(255,253,249,.55);border-radius:14px;margin-bottom:.6rem;padding-left:1rem;padding-right:1rem;}
+
+/* Audit du 10 oct. : titres du pied de page, contrastes, mobile */
+.ft h2.ft-h{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#dfe0c4;margin:0 0 1rem;line-height:1.4;}
+.band-hero .pk{color:#A3195B;}
+.band-hero .hero-mk{color:#C42A6E;}
+.rev-av{color:#A3195B;}
+@media(max-width:820px){.band-svc2 .svc-arr{display:none;}.burger{min-width:44px;min-height:44px;}}
+
+/* ===== Retours du 12 oct. ===== */
+/* Barre de menu pleine, toujours visible, comme sur le site actuel */
+.hd,.hd.scrolled{background:rgba(248,245,238,.96);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 1px 0 rgba(74,26,31,.08);}
+.hd.hide{transform:none;}
+/* Nom : même typographie que le site actuel */
+.logo,.menu-top .logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.4rem;letter-spacing:0;color:var(--bordeaux);}
+.logo span,.menu-top .logo span{color:inherit;font-style:italic;}
+@media(max-width:600px){.logo{font-size:1.1rem;}}
+.ft-word{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.4rem;}
+.ft-word em{color:inherit;font-style:italic;}
+/* Titre du haut : écritures du visuel d'origine */
+.hero-welcome{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.4rem,5vw,4.6rem);color:var(--bordeaux);}
+.hero-mk{font-family:'Great Vibes',cursive;font-weight:400;font-size:.62em;display:inline-block;transform:rotate(-8deg);margin:-.55em 0 0 1.4em;position:relative;z-index:2;}
+.desk-text .h-display .line{display:block;}
+/* Moins d'espace entre les sections, pour qu'on sente toujours la suite */
+.sec{padding:clamp(3rem,6vw,5.5rem) 0;}
+.sec-sm{padding:clamp(2.5rem,5vw,4rem) 0;}
+.ribbon-wrap + .band .sec{padding-top:clamp(4rem,7vw,6rem);}
+.band .v1 .process-section,.band .v1 .services-section,.band .v1 .projects-section,.band .v1 .ab-sec{padding-top:clamp(2.5rem,5vw,4rem);padding-bottom:clamp(2.5rem,5vw,4rem);}
+.band-panel{padding-top:clamp(1rem,2vw,1.5rem);padding-bottom:clamp(1rem,2vw,1.5rem);}
+/* Plus aucun fond rose */
+.v1 .cta-end,.v1 .next-link + .cta-end,.v1 .projects-section + .cta-end,.v1 .skills-section + .cta-end,.sec-rose{background:transparent!important;}
+.v1 .projects-section::before,.v1 .projects-nb{display:none;}
+.band-ab-hero .v1 .ab-hero{background:transparent!important;}
+.v1-about .ab-sec,.v1-about .ab-hero{background:transparent!important;}
+.band-top > .v1-about .ab-hero{padding-top:calc(76px + 2rem);}
+.desk-text .h-display .line{overflow:visible;}
+.desk-text .h-display .line + .line{margin-top:-.42em;}
+.hero-mk{margin:0 0 0 1.5em;font-size:.6em;}
+.band-top > .v1-about .ab-hero{padding-top:2rem;}
+
+/* ===== Retours du 15 oct. ===== */
+/* Heures des quatre villes */
+.clocks{display:flex;flex-wrap:wrap;gap:.2rem .5rem;justify-content:flex-end;}
+.clocks b{font-weight:700;font-variant-numeric:tabular-nums;}
+@media(max-width:700px){.band-hero .hero-meta{flex-direction:column;gap:.4rem;}.band-hero .hero-meta span:nth-child(2){display:flex!important;}.clocks{justify-content:flex-start;font-size:.78rem;}}
+/* Services : texte de droite plus foncé */
+.band-svc2 .svc-b{color:var(--bordeaux)!important;}
+.band-svc2 .tag{color:var(--bordeaux);border-color:rgba(59,20,24,.4);}
+/* Processus : lignes plus discrètes, texte posé sur les lignes et plus lisible */
+.band .v1 .process-section .process-nb{background-image:repeating-linear-gradient(transparent 0,transparent 29px,rgba(74,26,31,.08) 29px,rgba(74,26,31,.08) 30px)!important;background-size:100% 30px!important;}
+.band .v1 .process-section .proc-grid{row-gap:30px!important;}
+.band .v1 .process-section .proc-grid > div > div:first-child{height:60px;line-height:60px!important;margin:0!important;}
+.band .v1 .process-section .proc-grid > div > div:nth-child(2){line-height:30px!important;margin:0!important;font-size:.86rem!important;}
+.band .v1 .process-section .proc-grid ul{font-size:.92rem!important;line-height:30px!important;gap:0!important;color:#3B1418!important;}
+.band .v1 .process-section .proc-grid li{border-left:none!important;padding-left:0!important;}
+.band .v1 .process-section .proc-grid li + li{margin-top:30px;}
+.band .v1 .process-section .proc-grid strong{font-size:.84rem!important;line-height:30px;color:var(--fuchsia-fonce)!important;}
+/* Avis plus petits */
+.rev-card{width:min(320px,78vw);padding:1.2rem 1.2rem 1rem;gap:.7rem;border-radius:14px;box-shadow:6px 6px 0 var(--ombre);}
+.rev-card blockquote{font-size:.84rem;line-height:1.55;}
+.rev-card figcaption{padding-top:.7rem;}
+.rev-av{width:34px;height:34px;font-size:.95rem;}
+.reviews .h2{font-size:clamp(2rem,4vw,3.4rem);}
+/* Pages services : un seul fond uni, bouton « service suivant » remonté */
+.svc-page #projets{padding-bottom:1.2rem;}
+.svc-page .band-v1proj .projects-section{padding-bottom:1.2rem!important;}
+.svc-page .band-next{padding-top:0;}
+.svc-page .car-hint{margin-bottom:0;}
+/* Petits dossiers au style de l'accueil (À propos, FAQ) */
+.pf-mini{width:150px;cursor:default;}
+.pf-mini .pf-label{font-size:.66rem;}
+.pf-blank{background:#fff repeating-linear-gradient(transparent 0,transparent 9px,rgba(74,26,31,.12) 9px,rgba(74,26,31,.12) 10px);}
+.mini-desk{margin-top:3rem;padding-top:1.5rem;}
+.v1 .ab-folder.ab-folder-pf{width:auto;pointer-events:auto;bottom:2rem;right:3%;}
+/* À propos : bordeaux dès le début, mots en majuscule plus grands, logos, méthode lisible */
+.band-ab-hero .panel{border-radius:26px;}
+.band-ab-hero .v1 .ab-hero::after{opacity:.12;}
+.v1 .ab-note-k{font-size:2.4rem;line-height:1.1;}
+.v1 .ab-tools .sk{gap:.7rem;padding:.9rem 1rem;}
+.sk-logo{flex-shrink:0;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;position:relative;z-index:1;}
+.sk-logo svg{width:28px;height:28px;}
+.sk-mono{border-radius:8px;color:#fff;font:900 1rem 'Montserrat',sans-serif;}
+.v1 .ab-tools .sk:hover .sk-logo svg{fill:#F8F5EE;}
+.v1-about .ab-method .process-nb{display:none;}
+.v1-about .ab-method .proc-title{font-size:.9rem;}
+.v1-about .ab-method .ab-spanel{background:#FFFDF9;border:none;border-radius:18px;box-shadow:0 10px 30px -18px rgba(59,20,24,.35);}
+.v1-about .ab-method .ab-spanel h4{font-size:.95rem;color:var(--bordeaux);}
+.v1-about .ab-method .ab-spanel p{font-size:1rem;line-height:1.7;color:#3B1418;}
+.band-top.band-panel{padding-top:calc(76px + 1.2rem);}
+.band-ab-hero .v1 .ab-hero::after{display:none;}
+.carousel,.car-slide,.car-slide > *{min-width:0;max-width:100%;}
+.car-slide img{max-width:100%;height:auto;}
+.svc-page{overflow-x:clip;}
+
+/* Campagnes : modèle de bilan mensuel et mini FAQ */
+.report-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;}
+.report-intro .lead{margin-top:1.4rem;color:var(--bordeaux);}
+.report-note{margin-top:1.2rem;font:600 .8rem 'Montserrat',sans-serif;color:var(--olive);}
+.report{background:#FFFDF9;border-radius:18px;padding:1.6rem;box-shadow:12px 12px 0 rgba(90,97,48,.35);font-family:'Montserrat',sans-serif;color:var(--bordeaux);}
+.report-head{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1.5px dashed rgba(59,20,24,.18);}
+.report-head b{font-weight:800;font-size:1rem;}
+.report-head span:last-child{margin-left:auto;font-size:.75rem;color:var(--olive);font-weight:600;}
+.report-tab{background:var(--olive);color:#F8F5EE;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border-radius:99px;}
+.report-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem;}
+.kpi{background:#F2EDE0;border-radius:12px;padding:.8rem;display:flex;flex-direction:column;gap:.45rem;}
+.kpi-k{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;}
+.kpi-v{display:block;height:1.3rem;width:70%;border-radius:6px;background:repeating-linear-gradient(90deg,rgba(201,53,115,.28) 0 8px,rgba(201,53,115,.14) 8px 16px);}
+.kpi-d{font:.72rem/1.35 'Courier Prime',monospace;color:#3B1418;}
+.report-chart{display:flex;align-items:flex-end;gap:.6rem;height:90px;margin:1.3rem 0;padding:0 .3rem;border-bottom:1.5px solid rgba(59,20,24,.15);}
+.report-chart i{flex:1;background:linear-gradient(to top,var(--olive),#8F9468);border-radius:6px 6px 0 0;opacity:.75;}
+.report-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;}
+.report-cols h3{font-size:.85rem;font-weight:800;margin-bottom:.35rem;}
+.report-cols p{font:.78rem/1.45 'Courier Prime',monospace;color:#3B1418;margin-bottom:.6rem;}
+.sk-line{display:block;height:7px;border-radius:4px;background:rgba(59,20,24,.12);margin-top:.35rem;}
+.sk-line.short{width:60%;}
+@media(max-width:900px){.report-wrap{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.report-cols{grid-template-columns:1fr;}}
+.band-cfaq .faq-grid{align-items:start;}
+
+/* Pages services : projets dans un panneau arrondi, contact bordeaux (choix du 15 oct.) */
+.band-projets .panel{box-shadow:none;}
+.band-projets .panel > section,.band-projets .panel > div > section{padding-left:clamp(.5rem,3vw,2.5rem);padding-right:clamp(.5rem,3vw,2.5rem);}
+.svc-page .band-next{padding-top:0;padding-bottom:.4rem;}
+.band-cta-dark .cta-end{padding:clamp(3rem,6vw,4.5rem) 1.5rem!important;}
+.band-cta-dark .cta-end-title{color:#F8F5EE!important;}
+.band-cta-dark .cta-end-text{color:rgba(248,245,238,.85)!important;}
+.band-cta-dark .cta-end-link{color:#F9D2DE!important;border-color:#F9D2DE!important;}
+
+/* ===== Retours du 15 oct. (2) ===== */
+/* Accueil : ombre sous les dossiers */
+.pf-front{box-shadow:0 16px 26px -14px rgba(59,20,24,.45),0 3px 6px -2px rgba(59,20,24,.18);}
+.pf-back{box-shadow:0 18px 30px -16px rgba(59,20,24,.45);}
+/* Services : explication en gras */
+.band-svc2 .svc-b{font-weight:700;}
+.band-svc2 .svc-b .tags{font-weight:400;}
+/* Accueil : nouveau « Mon processus », fiches à onglet reliées par un fil */
+.band-process .lead{color:var(--bordeaux);max-width:34ch;}
+.pcs{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.3rem;position:relative;padding-top:1.4rem;}
+.pcs::before{content:'';position:absolute;left:4%;right:4%;top:2.15rem;border-top:2px dashed rgba(90,97,48,.45);z-index:0;}
+.pc{position:relative;z-index:1;background:#FFFDF9;border-radius:6px 20px 20px 20px;padding:1.6rem 1.4rem 1.5rem;box-shadow:0 18px 40px -26px rgba(59,20,24,.45);transition:transform .35s var(--ease),box-shadow .35s;}
+.pc:hover{transform:translateY(-6px);box-shadow:0 26px 46px -24px rgba(59,20,24,.5);}
+.pc-tab{position:absolute;top:-1.45rem;left:0;min-width:4.4rem;padding:.35rem 1rem .5rem;border-radius:12px 12px 0 0;font:900 1.05rem 'Montserrat',sans-serif;color:#F8F5EE;text-align:center;}
+.pc-1 .pc-tab{background:#5A6130;}
+.pc-2 .pc-tab{background:#8F9468;}
+.pc-3 .pc-tab{background:#C93573;}
+.pc-4 .pc-tab{background:#3B1418;}
+.pc h3{font:800 .95rem/1.3 'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:var(--bordeaux);margin:.4rem 0 1rem;}
+.pc p{font:.9rem/1.6 'Courier Prime',monospace;color:#3B1418;margin-top:.9rem;}
+.pc p b{display:block;font:700 .82rem 'Montserrat',sans-serif;color:var(--fuchsia-fonce);margin-bottom:.2rem;}
+@media(max-width:980px){.pcs{grid-template-columns:1fr 1fr;row-gap:2.6rem;}.pcs::before{display:none;}}
+@media(max-width:560px){.pcs{grid-template-columns:1fr;}}
+/* Pages services : réalisations remontées */
+.svc-page .band-top .cat-intro{padding-bottom:1.2rem!important;min-height:0!important;}
+.svc-page .band-projets{padding-top:.4rem;}
+/* Partout : un point à la place du petit trait devant les sur-titres */
+.v1 .section-eye::before{width:7px;height:7px;border-radius:50%;background:var(--fuchsia-fonce);}
+.band-dark .v1 .section-eye::before{background:#F9D2DE;}
+/* À propos : cahier et écriture refaits */
+.band-ab-hero .v1 .ab-book{max-width:1000px;}
+.band-ab-hero .v1 .ab-page{background-color:#FFFDF9;background-image:linear-gradient(90deg,transparent 2.4rem,rgba(201,53,115,.35) 2.4rem,rgba(201,53,115,.35) calc(2.4rem + 1.5px),transparent calc(2.4rem + 1.5px)),repeating-linear-gradient(transparent 0,transparent 27px,rgba(59,20,24,.07) 27px,rgba(59,20,24,.07) 28px);padding:2rem 2.2rem 2rem 3.4rem;box-shadow:0 22px 44px -22px rgba(0,0,0,.55);}
+.band-ab-hero .v1 .ab-left{border-radius:20px 4px 4px 20px;transform:none;}
+.band-ab-hero .v1 .ab-right{border-radius:4px 20px 20px 4px;transform:none;}
+.band-ab-hero .v1 .ab-spiral{background:radial-gradient(ellipse 20px 5px at 50% 50%,#CDBFB1 0,#CDBFB1 68%,transparent 72%) center top/100% 30px repeat-y;}
+.band-ab-hero .v1 .ab-name{font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:-.01em;font-size:clamp(2rem,3.4vw,2.9rem);line-height:1;transform:none;margin:1rem 0 0;color:#3B1418;}
+.band-ab-hero .v1 .ab-name span:nth-child(2){margin-left:0;color:var(--fuchsia-fonce);}
+.band-ab-hero .v1 .ab-name span:nth-child(3){margin-left:0;}
+.band-ab-hero .v1 .ab-right h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.8rem,2.8vw,2.3rem);letter-spacing:-.01em;transform:none;margin:0 0 1.1rem;color:#3B1418;line-height:1.1;}
+.band-ab-hero .v1 .ab-right h2 .pk{color:var(--fuchsia-fonce);}
+.band-ab-hero .v1 .ab-right p{font-size:.95rem;line-height:28px;}
+.band-ab-hero .v1 .ab-role{font-size:.7rem;letter-spacing:.14em;}
+/* À propos : dossier « Moi » sur le côté */
+.v1 .ab-folder.ab-folder-pf{right:1.5%;bottom:auto;top:50%;transform:translateY(-50%) rotate(7deg);}
+@media(max-width:1180px){.v1 .ab-folder.ab-folder-pf{display:none;}}
+/* À propos : formation au centre, avec les logos des écoles */
+.v1-about .ab-head:has(+ .ab-cards){text-align:center;}
+.v1-about .ab-cards{margin:0 auto;}
+.v1-about .ab-card{position:relative;padding-right:5.4rem;}
+.ab-school{position:absolute;top:1rem;right:1rem;width:56px;height:56px;object-fit:contain;border-radius:12px;background:#fff;box-shadow:0 4px 12px rgba(59,20,24,.15);}
+.v1 .ab-tools .sk > div{min-width:0;}
+.v1 .ab-tools .sk-name{overflow-wrap:anywhere;hyphens:auto;}
+.v1-about #diplomes .ab-head{margin-left:auto;margin-right:auto;text-align:center;}
+.v1-about #diplomes .section-eye{justify-content:center;}
+
+/* FAQ : titre remonté */
+.band-top .p-hero{padding-top:clamp(1.5rem,3vw,2.5rem);}
+/* Accueil : « Comment je travaille » repris de l'À propos */
+.band-method .v1 .ab-method{background:transparent!important;}
+
+/* Nouvelle photo (portrait) : cadrage sur le visage */
+.pf-photo img{object-position:50% 58%;}
+.v1 .ab-polaroid img{object-position:50% 60%;}
+
+/* À propos : haut de page « cartes à piocher » */
+.abc{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;padding:clamp(1.6rem,4vw,3.2rem) clamp(1.2rem,4vw,3.6rem);color:#F8F5EE;}
+.abc-photo{border-radius:200px 200px 26px 26px;overflow:hidden;border:6px solid #B9BC94;aspect-ratio:4/5;}
+.abc-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block;}
+.abc .eyebrow{color:#F9D2DE;}
+.abc .eyebrow::before{background:#F9D2DE;}
+.abc-name{font:900 clamp(2.4rem,5vw,3.8rem)/1 'Montserrat',sans-serif;letter-spacing:-.02em;margin:.9rem 0 .6rem;}
+.abc-name em{font-style:normal;color:#F9A8CB;}
+.abc-role{font:700 .75rem 'Montserrat',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B9BC94;margin-bottom:1.3rem;}
+.abc-lead{font:1rem/1.7 'Courier Prime',monospace;color:rgba(248,245,238,.92);max-width:60ch;}
+.deck{position:relative;height:230px;margin-top:1.8rem;cursor:pointer;outline:none;max-width:560px;}
+.dcard{position:absolute;left:0;top:0;width:min(420px,calc(100% - 120px));min-height:180px;border-radius:20px;padding:1.4rem 1.6rem;box-shadow:0 14px 30px rgba(0,0,0,.35);transition:transform .45s cubic-bezier(.2,.8,.2,1);}
+.dcard b{display:block;font:900 clamp(1.5rem,2.6vw,1.9rem) 'Montserrat',sans-serif;margin-bottom:.5rem;}
+.dcard span{font:.95rem/1.55 'Courier Prime',monospace;}
+.dcard:nth-child(1){transform:rotate(-2deg);z-index:3;}
+.dcard:nth-child(2){transform:translate(60px,14px) rotate(4deg);z-index:2;}
+.dcard:nth-child(3){transform:translate(120px,28px) rotate(9deg);z-index:1;}
+.deck:focus-visible .dcard:first-child{box-shadow:0 0 0 3px #F9D2DE,0 14px 30px rgba(0,0,0,.35);}
+.abc-hint{font:600 .78rem 'Montserrat',sans-serif;color:#B9BC94;margin-top:.6rem;}
+@media(max-width:820px){.abc{grid-template-columns:1fr;}.abc-photo{max-width:320px;margin:0 auto;}.deck{height:250px;}.dcard{width:calc(100% - 70px);}.dcard:nth-child(2){transform:translate(30px,14px) rotate(4deg);}.dcard:nth-child(3){transform:translate(60px,28px) rotate(8deg);}}
+.abc-name em{font:inherit;font-style:normal;font-weight:900;}
+.dcard:nth-child(4){transform:translate(180px,42px) rotate(13deg);z-index:0;}
+.deck{height:250px;}
+@media(max-width:820px){.dcard:nth-child(4){transform:translate(84px,40px) rotate(11deg);}.dcard{width:calc(100% - 90px);}}
+.dcard:not(:first-child) > *{visibility:hidden;}
+/* Cartes : un repère en grand, une courte légende */
+.dcard{min-height:150px;display:flex;flex-direction:column;justify-content:center;}
+.dcard b{font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;margin-bottom:.6rem;}
+.dcard span{font-size:1rem;}
+.deck{height:220px;}
+.abc-lead p + p{margin-top:.8rem;} .abc-lead{font-size:.95rem;}
+.abc{align-items:start;} .abc-photo{margin-top:2.4rem;}
+/* Cartes « ma façon de travailler » : titre un peu plus petit, texte lisible */
+.dcard b{font-size:clamp(1.5rem,2.6vw,2rem);}
+.dcard span{font-size:.98rem;line-height:1.5;}
+.dcard{min-height:170px;}
+.deck{height:240px;}
+.abc-lead{max-width:none;}
+
+/* À propos : tout visible dès l'arrivée, cartes posées sur le bas de la photo */
+.abc{padding-top:clamp(1.2rem,3vw,2.2rem);padding-bottom:clamp(1.2rem,3vw,2.2rem);grid-template-columns:minmax(0,380px) 1fr;}
+.abc-left{position:relative;}
+.abc-photo{margin-top:0;aspect-ratio:1/1.05;}
+.abc-left .deck{margin:-130px 0 0 24px;height:200px;max-width:none;}
+.abc-left .dcard{width:300px;min-height:150px;padding:1.1rem 1.2rem;}
+.abc-left .dcard b{font-size:1.35rem;margin-bottom:.4rem;}
+.abc-left .dcard span{font-size:.86rem;line-height:1.45;}
+.abc-left .dcard:nth-child(2){transform:translate(22px,10px) rotate(4deg);}
+.abc-left .dcard:nth-child(3){transform:translate(44px,20px) rotate(8deg);}
+.abc-left .dcard:nth-child(4){transform:translate(66px,30px) rotate(12deg);}
+.abc-left .abc-hint{margin-top:1rem;text-align:left;padding-left:24px;}
+.abc-name{font-size:clamp(2.2rem,4.2vw,3.4rem);margin:.6rem 0 .5rem;}
+.abc-role{margin-bottom:1rem;}
+.abc-lead{font-size:.92rem;line-height:1.65;}
+@media(max-width:820px){.abc-left .deck{margin:-90px 0 0 0;}.abc-left .dcard{width:calc(100% - 80px);}.abc-left .abc-hint{padding-left:0;}}
+.abc-photo img{object-position:50% 100%;}
+.abc-photo{background:#000;}
+.abc-photo img{object-fit:contain;object-position:50% 100%;}
+.abc-photo img{transform:translateY(-26%);}
+.abc-photo img{-webkit-mask-image:linear-gradient(90deg,transparent 14%,#000 25%,#000 75%,transparent 86%);mask-image:linear-gradient(90deg,transparent 14%,#000 25%,#000 75%,transparent 86%);}
+
+/* Formation : texte posé exactement sur les lignes (pas de 28 px) */
+.v1-about .ab-card{padding:0 5.4rem 28px 1.5rem;background-image:linear-gradient(#FFFDF9 47px,var(--olive-clair) 47px,var(--olive-clair) 48.5px,transparent 48.5px),repeating-linear-gradient(transparent 0,transparent 27px,var(--ligne) 27px,var(--ligne) 28px);background-position:0 0,0 48px;background-color:#FFFDF9;}
+.v1-about .ab-card .ab-year{height:48px;line-height:48px;margin:0;}
+.v1-about .ab-card h3{margin:0;line-height:28px;font-size:.98rem;}
+.v1-about .ab-card p{margin:0;line-height:28px;}
+.v1-about .ab-school{top:.4rem;width:40px;height:40px;border-radius:9px;}
+
+/* Campagnes : bilan chiffré (exemple) */
+.kpi-n{font:800 1.5rem/1 'Montserrat',sans-serif;color:#3B1418;}
+.report-chart-n{position:relative;height:130px;align-items:flex-end;padding-bottom:1.4rem;}
+.report-chart-n .bar{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:.25rem;}
+.report-chart-n .bar i{width:100%;background:linear-gradient(to top,var(--olive),#8F9468);border-radius:6px 6px 0 0;opacity:.85;}
+.report-chart-n .bar b{font:700 .72rem 'Montserrat',sans-serif;color:#3B1418;}
+.report-chart-n .bar span{position:absolute;bottom:-.1rem;font:600 .66rem 'Montserrat',sans-serif;color:var(--olive);transform:translateY(100%);}
+.report-chart-n .bar{position:relative;}
+.chart-cap{position:absolute;right:0;top:-1.2rem;font:600 .68rem 'Montserrat',sans-serif;color:var(--olive);}
+.report-chart-n .bar i{width:70%;}
+.report-chart-n .bar i{flex:none;}
+
+/* Campagnes : aperçu du vrai document de bilan */
+.bilan-btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem;}
+.bilan-doc{position:relative;display:block;width:min(100%,420px);aspect-ratio:1588/2246;margin:0 auto;border:0;background:none;cursor:zoom-in;}
+.bilan-doc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 22px 40px -22px rgba(59,20,24,.55);transition:transform .45s var(--ease);}
+.bilan-doc .bd3{transform:translate(18%,6%) rotate(7deg) scale(.92);}
+.bilan-doc .bd2{transform:translate(9%,3%) rotate(3.5deg) scale(.96);}
+.bilan-doc:hover .bd3{transform:translate(26%,4%) rotate(10deg) scale(.92);}
+.bilan-doc:hover .bd2{transform:translate(13%,1%) rotate(5deg) scale(.96);}
+.bilan-doc:hover .bd1{transform:translateY(-6px);}
+.bilan-doc .work-badge{position:absolute;left:1rem;bottom:1rem;z-index:2;}
+@media(max-width:900px){.bilan-doc{width:min(78%,360px);}}
