@@ -623,3 +623,6 @@ body{overflow-x:hidden;}
 .bilan-doc:hover .bd1{transform:translateY(-6px);}
 .bilan-doc .work-badge{position:absolute;left:1rem;bottom:1rem;z-index:2;}
 @media(max-width:900px){.bilan-doc{width:min(78%,360px);}}
+
+/* 2026-11-07 : 3 langues (FR · EN · PT) dans l en-tete, place sur petits ecrans */
+@media(max-width:480px){.hd-in{gap:.7rem}.lang{gap:0;font-size:.78rem}.lang a,.lang span{padding:.3rem .38rem}}
