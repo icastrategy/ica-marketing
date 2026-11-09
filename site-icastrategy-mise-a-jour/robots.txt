@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://icastrategy.fr/sitemap.xml
