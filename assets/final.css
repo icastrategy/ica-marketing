@@ -626,3 +626,45 @@ body{overflow-x:hidden;}
 
 /* 2026-11-07 : 3 langues (FR · EN · PT) dans l en-tete, place sur petits ecrans */
 @media(max-width:480px){.hd-in{gap:.7rem}.lang{gap:0;font-size:.78rem}.lang a,.lang span{padding:.3rem .38rem}}
+
+/* === Version téléphone : accueil et À propos (novembre 2026) === */
+@media (max-width:700px){
+  /* Accueil : bandeau du haut, heures en grille 2 x 2 */
+  .band-hero .hero-meta{gap:.7rem;margin-bottom:1.6rem;}
+  .band-hero .hero-meta span.clocks:nth-child(2){display:grid!important;grid-template-columns:max-content 0 max-content 0;column-gap:0;row-gap:.3rem;font-size:0;overflow:hidden;}
+  .band-hero .hero-meta .clocks > span{font-size:.74rem;display:flex;gap:.45rem;margin-right:1.8rem;}
+
+  /* Accueil : ligne « Portfolio · Stratège » et heures masquées sur téléphone */
+  .band-hero .hero-meta{display:none!important;}
+  .desk-text .hero-welcome{margin-top:1.2rem;}
+
+  /* Accueil : tout le haut de page centré */
+  .desk-text{text-align:center;}
+  .desk-text .hero-welcome,.desk-text .h-display,.desk-text .lead{margin-left:auto;margin-right:auto;text-align:center;}
+  .desk-text .h-display .line{display:block;text-align:center;}
+  .desk-text .hero-actions{justify-content:center!important;}
+  .desk-hint{text-align:center;}
+
+  /* Accueil : boutons plus petits, côte à côte */
+  .desk-text .hero-actions{flex-wrap:nowrap;gap:.6rem;margin-top:1.3rem;}
+  .desk-text .hero-actions .btn{padding:.75rem 1.05rem;font-size:.7rem;letter-spacing:.08em;white-space:nowrap;}
+  .desk-text .hero-actions .btn .ic{width:.9em;height:.9em;}
+  .desk-text .lead{margin-top:1rem;}
+
+  /* Accueil : étiquettes des dossiers lisibles */
+  .pf-label{font-size:.56rem;letter-spacing:.04em;}
+
+  /* À propos : une seule colonne, le texte d'abord */
+  .abc{grid-template-columns:1fr!important;gap:1.6rem;padding:1.6rem 1.25rem 2rem;}
+  .abc-text{order:-1;}
+  .abc-name{font-size:2.5rem;}
+  .abc-lead{font-size:.95rem;line-height:1.7;}
+  .abc-left{max-width:340px;width:100%;margin:0 auto;}
+  .abc-photo{max-width:230px;margin:0 auto;}
+  .abc-left .deck{margin:-70px 0 0 0;height:210px;}
+  .abc-left .dcard{width:calc(100% - 70px);min-height:150px;}
+  .abc-left .dcard:nth-child(2){transform:translate(18px,10px) rotate(4deg);}
+  .abc-left .dcard:nth-child(3){transform:translate(36px,20px) rotate(7deg);}
+  .abc-left .dcard:nth-child(4){transform:translate(54px,30px) rotate(10deg);}
+  .abc-left .abc-hint{text-align:center;margin-top:1.4rem;}
+}
