@@ -35,6 +35,12 @@
   .btn-main{background:var(--bordeaux);color:var(--ivoire);border-color:var(--bordeaux);justify-content:center;}
   .btn-main span{flex:0 1 auto;}
   .btn-rose{background:var(--fuchsia);color:#fff;border-color:var(--fuchsia);}
+  .btn-line{background:transparent;border-color:var(--bordeaux);}
+  html{scroll-behavior:smooth;}
+  .form{margin-top:26px;padding:22px 16px 6px;background:var(--ivoire);border-radius:20px;text-align:left;scroll-margin-top:20px;}
+  .form h2{font-weight:900;font-size:1.25rem;}
+  .form p{margin-top:6px;font-family:'Courier Prime',ui-monospace,monospace;font-size:.88rem;line-height:1.5;}
+  .form iframe{display:block;width:100%;min-height:470px;border:0;margin-top:8px;}
   .foot{margin-top:22px;font-size:.75rem;color:var(--olive);}
   .foot a{color:inherit;}
 </style>
@@ -51,6 +57,11 @@
     <a class="btn btn-main" href="inesse-cecilio-alouhmy.vcf" download>
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M19 8v6M16 11h6"/></svg>
       <span>Ajouter à mes contacts</span>
+    </a>
+    <a class="btn btn-line" href="#rester-en-contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg>
+      <span>Laisser mes coordonnées</span>
+      <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
     </a>
     <a class="btn btn-rose" href="https://calendly.com/ica-strategy/30min" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
@@ -81,6 +92,12 @@
       <span>+33 7 81 79 17 86</span>
     </a>
   </div>
+
+  <section class="form" id="rester-en-contact">
+    <h2>On reste en contact&nbsp;?</h2>
+    <p>Laissez-moi vos coordonnées et quelques mots sur votre besoin, je reviens vers vous sous 24&nbsp;h.</p>
+    <iframe src="https://tally.so/embed/dWRaQV?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1&amp;source=carte" loading="lazy" title="Laisser mes coordonnées"></iframe>
+  </section>
 
   <p class="foot"><a href="https://icastrategy.fr/">icastrategy.fr</a></p>
 </main>
