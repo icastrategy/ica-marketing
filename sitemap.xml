@@ -180,4 +180,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.fr/en/confidentialite/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://icastrategy.fr/pt/confidentialite/"/>
   </url>
+  <url>
+    <loc>https://icastrategy.fr/reseaux-sociaux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://icastrategy.fr/reseaux-sociaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.fr/en/reseaux-sociaux/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://icastrategy.fr/pt/reseaux-sociaux/"/>
+  </url>
+  <url>
+    <loc>https://icastrategy.fr/en/reseaux-sociaux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://icastrategy.fr/reseaux-sociaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.fr/en/reseaux-sociaux/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://icastrategy.fr/pt/reseaux-sociaux/"/>
+  </url>
+  <url>
+    <loc>https://icastrategy.fr/pt/reseaux-sociaux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://icastrategy.fr/reseaux-sociaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.fr/en/reseaux-sociaux/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://icastrategy.fr/pt/reseaux-sociaux/"/>
+  </url>
 </urlset>
