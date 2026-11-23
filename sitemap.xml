@@ -198,4 +198,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://icastrategy.fr/en/reseaux-sociaux/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://icastrategy.fr/pt/reseaux-sociaux/"/>
   </url>
+  <url>
+    <loc>https://icastrategy.fr/blog/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://icastrategy.fr/blog/avoir-des-avis-google/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
 </urlset>
