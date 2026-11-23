@@ -668,3 +668,16 @@ body{overflow-x:hidden;}
   .abc-left .dcard:nth-child(4){transform:translate(54px,30px) rotate(10deg);}
   .abc-left .abc-hint{text-align:center;margin-top:1.4rem;}
 }
+
+/* ----- Menu déroulant À propos (FAQ, Blog), 23 nov. 2026 ----- */
+.nav-dd{position:relative;display:flex;align-items:center}
+.nav-dd>a{display:inline-flex;align-items:center;gap:.35rem}
+.dd-chev{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.nav-dd:hover .dd-chev,.nav-dd:focus-within .dd-chev{transform:rotate(180deg)}
+.nav-dd.nav-on>a{color:var(--fuchsia-fonce)}
+.nav-dd-menu{position:absolute;top:100%;left:-.9rem;margin-top:.7rem;min-width:170px;padding:.5rem;background:#FFFDF9;border:1px solid var(--ligne);border-radius:16px;box-shadow:8px 8px 0 var(--ombre);display:flex;flex-direction:column;gap:.1rem;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s,transform .25s,visibility .25s;z-index:60}
+.nav-dd-menu::before{content:'';position:absolute;left:0;right:0;top:-.9rem;height:.9rem}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:none}
+.nav .nav-dd-menu a{padding:.6rem .8rem;border-radius:10px;color:var(--bordeaux)}
+.nav .nav-dd-menu a::after{display:none}
+.nav .nav-dd-menu a:hover,.nav .nav-dd-menu a[aria-current="page"]{background:#F2EDE0;color:var(--fuchsia-fonce)}
