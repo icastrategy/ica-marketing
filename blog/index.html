@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog marketing et branding | ICA Strategy</title>
-<meta name="description" content="Branding, rédaction, emailing et campagnes : des conseils concrets pour faire connaître votre marque. Articles à venir.">
+<title>Blog : conseils marketing pour petits commerces | ICA Strategy</title>
+<meta name="description" content="Avis Google, réseaux sociaux, identité visuelle : des conseils concrets pour faire connaître votre commerce, par ICA Strategy.">
 <meta name="author" content="Inesse Cecilio Alouhmy">
-<meta name="robots" content="noindex">
 
 <link rel="canonical" href="https://icastrategy.fr/blog/">
 <link rel="alternate" hreflang="fr" href="https://icastrategy.fr/blog/">
@@ -17,8 +16,8 @@
 <meta property="og:site_name" content="ICA Strategy">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://icastrategy.fr/blog/">
-<meta property="og:title" content="Blog marketing et branding | ICA Strategy">
-<meta property="og:description" content="Branding, rédaction, emailing et campagnes : des conseils concrets pour faire connaître votre marque. Articles à venir.">
+<meta property="og:title" content="Blog : conseils marketing pour petits commerces | ICA Strategy">
+<meta property="og:description" content="Avis Google, réseaux sociaux, identité visuelle : des conseils concrets pour faire connaître votre commerce, par ICA Strategy.">
 <meta property="og:image" content="https://icastrategy.fr/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -30,7 +29,7 @@
 <link rel="stylesheet" href="../assets/fonts.css?v=202611071703">
 <link rel="stylesheet" href="../assets/v2.css?v=202611071703">
 <link rel="stylesheet" href="../assets/v1-scope.css?v=202611071703">
-<link rel="stylesheet" href="../assets/final.css?v=202611071703">
+<link rel="stylesheet" href="../assets/final.css?v=202611232330">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -53,7 +52,7 @@
 <header class="hd">
   <div class="wrap hd-in">
     <a class="logo" href="../">ICA <span>Strategy</span></a>
-    <nav class="nav" aria-label="Menu principal"><a href="../branding/">Branding</a><a href="../redaction/">Rédaction</a><a href="../mailing/">Mailing</a><a href="../design/">Design</a><a href="../campagnes/">Campagnes</a><a href="../reseaux-sociaux/">Réseaux</a><a href="../a-propos/">À propos</a><a href="../faq/">FAQ</a></nav>
+    <nav class="nav" aria-label="Menu principal"><a href="../branding/">Branding</a><a href="../redaction/">Rédaction</a><a href="../mailing/">Mailing</a><a href="../design/">Design</a><a href="../campagnes/">Campagnes</a><a href="../reseaux-sociaux/">Réseaux</a><div class="nav-dd nav-on"><a href="../a-propos/">À propos<svg class="dd-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a><div class="nav-dd-menu"><a href="../faq/">FAQ</a><a href="../blog/" aria-current="page">Blog</a></div></div></nav>
     <div class="lang"><span>FR</span><a href="../en/blog/" hreflang="en" lang="en">EN</a><a href="../pt/blog/" hreflang="pt" lang="pt">PT</a></div>
     <a class="btn btn-fill hd-cta" href="../#contact">Me contacter</a>
     <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
@@ -74,6 +73,7 @@
       <li><a href="../reseaux-sociaux/"><small>06</small>Réseaux sociaux</a></li>
       <li><a href="../a-propos/"><small>07</small>À propos</a></li>
       <li><a href="../faq/"><small>08</small>FAQ</a></li>
+      <li><a href="../blog/" aria-current="page"><small>09</small>Blog</a></li>
   </ul>
   <div class="menu-foot">
     <a class="btn btn-light" href="../#contact">Me contacter<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -85,15 +85,29 @@
   <div>
     <div class="cat-num-label">Blog</div>
     <h1 class="cat-title"><span class="pk">Blog</span></h1>
-    <p class="cat-desc">Articles à venir.</p>
+    <p class="cat-desc">Des conseils concrets pour faire connaître votre commerce.</p>
   </div>
 </section></div></div>
 <div class="band " style="background:linear-gradient(to bottom,#F8F5EE 0,#D6DAB2 80px)"><section class="sec-sm">
+  <style>
+  .bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+  .bl-card{display:flex;flex-direction:column;background:#FFFDF9;border-radius:22px;overflow:hidden;text-decoration:none;color:var(--texte);box-shadow:8px 8px 0 var(--ombre);transition:transform .3s}
+  .bl-card:hover{transform:translateY(-4px)}
+  .bl-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+  .bl-card div{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+  .bl-date{font-family:'Courier Prime',monospace!important;font-weight:700;font-size:.75rem!important;letter-spacing:.14em;text-transform:uppercase;color:var(--fuchsia-fonce)}
+  .bl-card h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.35rem;line-height:1.15;letter-spacing:-.02em;color:var(--bordeaux)}
+  .bl-card p.bl-sum{font-family:'Montserrat',sans-serif!important;font-size:.95rem;line-height:1.6;color:var(--texte-doux)}
+  .bl-more{margin-top:auto;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fuchsia-fonce)}
+  @media(max-width:1000px){.bl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:640px){.bl-grid{grid-template-columns:1fr}}
+  </style>
   <div class="wrap">
-    <div class="empty rv">
-      <p class="eyebrow">Bientôt</p>
-      <p class="h2">Articles <em>à venir.</em></p>
-      <a class="btn btn-line" href="../redaction/#projets">Lire mes articles publiés<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <div class="bl-grid">
+      <a class="bl-card rv" href="avoir-des-avis-google/">
+        <img src="../img/blog/couverture-avis-google.jpg" width="1600" height="900" alt="Avis Google : comment en avoir plus pour votre commerce, sans rien acheter">
+        <div><span class="bl-date">23 novembre 2026 · 7 min</span><h2>Comment avoir des avis Google pour votre commerce, sans rien acheter</h2><p class="bl-sum">Le lien, le QR code, les phrases à dire au comptoir et les règles à respecter.</p><span class="bl-more">Lire l'article</span></div>
+      </a>
     </div>
   </div>
 </section>
